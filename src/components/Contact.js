@@ -3,12 +3,12 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 const Contact = () => {
   return (
-    <div className="bg-dark text-white py-5 section" id="contact">
+    <div className="bg-dark text-white py-3 section" id="contact">
       <Container>
-        <h2 className="text-center mb-4">📫 Contact Me</h2>
+        <h2 className="text-center mb-4">Contact Me</h2>
         <Row className="justify-content-center">
           <Col md={8} className="text-center">
-            <p className="fs-5">I'm open to job opportunities, collaborations, or just a friendly tech chat.</p>
+            {/* <p className="fs-5">I'm open to job opportunities, collaborations, or just a friendly tech chat.</p> */}
             {/* <Form>
                 <Form.Group className="mb-3" controlId="formName">
                     <Form.Label className="text-white">Your Name</Form.Label>
@@ -47,13 +47,22 @@ const Contact = () => {
                     </Button>
                 </div>
             </Form> */}
-            <p className="fs-5">
+            {/* <p className="fs-5">
               <FaEnvelope className="me-2" />
-              <a href="mailto:yamani.yassine.dev@gmail.com" className="text-white">
+              <a href="mailto:yamani.yassine.dev@gmail.com" className="">
                 yamani.yassine.dev@gmail.com
               </a>
-            </p>
+            </p> */}
             <div className="mt-3">
+              <Button
+                variant="outline-light"
+                href="mailto:yamani.yassine.dev@gmail.com"
+                target="_blank"
+                className="me-3"
+              >
+                <FaEnvelope /> Gmail
+              </Button>
+
               <Button
                 variant="outline-light"
                 href="https://github.com/YamaniYassine"

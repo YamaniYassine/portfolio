@@ -5,5 +5,8 @@
 .navbar-nav .active {
   font-weight: bold;
   color: #6a6a6a;
-  border-bottom: 2px solid #6a6a6a;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid #6a6a6a; /* Underline on hover */
 }

@@ -13,7 +13,7 @@ const Header = () => {
             items={['about', 'skills', 'projects', 'contact']}
             currentClassName="active"
             className="navbar-nav ms-auto text-end"
-            offset={-80}
+            offset={-56}
           >
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#skills">Skills</Nav.Link>

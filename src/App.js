@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Header from './components/Navbar';
 import Footer from './components/Footer';
 import Skills from './components/Skills';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Projects />
         <Contact />
       </div>
+      <ScrollToTop />
       <Footer />
     </>
   );
