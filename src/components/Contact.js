@@ -1,16 +1,15 @@
 import React from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 const Contact = () => {
   return (
-    <div className="bg-dark text-white py-5" id="contact">
+    <div className="bg-dark text-white py-5 section" id="contact">
       <Container>
         <h2 className="text-center mb-4">📫 Contact Me</h2>
         <Row className="justify-content-center">
           <Col md={8} className="text-center">
             <p className="fs-5">I'm open to job opportunities, collaborations, or just a friendly tech chat.</p>
-            <Form>
+            {/* <Form>
                 <Form.Group className="mb-3" controlId="formName">
                     <Form.Label className="text-white">Your Name</Form.Label>
                     <Form.Control
@@ -47,13 +46,13 @@ const Contact = () => {
                     Send Message
                     </Button>
                 </div>
-            </Form>
-            {/* <p className="fs-5">
+            </Form> */}
+            <p className="fs-5">
               <FaEnvelope className="me-2" />
               <a href="mailto:yamani.yassine.dev@gmail.com" className="text-white">
                 yamani.yassine.dev@gmail.com
               </a>
-            </p> */}
+            </p>
             <div className="mt-3">
               <Button
                 variant="outline-light"
@@ -65,7 +64,7 @@ const Contact = () => {
               </Button>
               <Button
                 variant="outline-light"
-                href="https://www.linkedin.com/in/yamaniyassine"
+                href="https://www.linkedin.com/in/yamani-yassine/"
                 target="_blank"
               >
                 <FaLinkedin /> LinkedIn

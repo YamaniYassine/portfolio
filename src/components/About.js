@@ -3,7 +3,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const About = () => {
   return (
-    <div className="bg-white py-5" id="about">
+    <div className="bg-white py-5 section" style={{ minHeight: '100vh' }} id="about">
       <Container>
         <h2 className="text-center mb-4">👨‍💻 About Me</h2>
         <Row className="justify-content-center">

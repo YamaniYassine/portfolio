@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const Hero = () => {
   return (
-    <div className="bg-light text-center py-5">
+    <div className="bg-light text-center d-flex align-items-center justify-content-center section" style={{ minHeight: '100vh' }} id="hero">
       <Container>
         <Row className="justify-content-center">
           <Col md={8}>
