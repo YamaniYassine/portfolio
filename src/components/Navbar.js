@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import Scrollspy from 'react-scrollspy';
 
 const Header = () => {
   return (
@@ -8,11 +9,17 @@ const Header = () => {
         <Navbar.Brand href="#hero">Yamani Yassine</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto text-end">
-            <Nav.Link href="#about" className="">About</Nav.Link>
-            <Nav.Link href="#projects" className="">Projects</Nav.Link>
+          <Scrollspy
+            items={['about', 'skills', 'projects', 'contact']}
+            currentClassName="active"
+            className="navbar-nav ms-auto text-end"
+            offset={-80}
+          >
+            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#skills">Skills</Nav.Link>
+            <Nav.Link href="#projects">Projects</Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
-          </Nav>
+          </Scrollspy>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -33,7 +33,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="bg-light py-5 section" style={{ minHeight: '100vh' }} id="projects">
+    <div className="bg-white py-5 section" style={{ minHeight: '100vh' }} id="projects">
       <Container>
         <h2 className="text-center mb-4">🛠️ Projects</h2>
         <Row className="justify-content-center">
