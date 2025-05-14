@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className="bg-dark text-white py-3 section" id="contact">
       <Container>
-        <h2 className="text-center mb-4">Contact Me</h2>
+        <h2 className="text-center mb-4 display-6 fw-bold">Contact Me</h2>
         <Row className="justify-content-center">
           <Col md={8} className="text-center">
             {/* <p className="fs-5">I'm open to job opportunities, collaborations, or just a friendly tech chat.</p> */}
@@ -53,7 +53,7 @@ const Contact = () => {
                 yamani.yassine.dev@gmail.com
               </a>
             </p> */}
-            <div className="mt-3">
+            <div className="mb-2">
               <Button
                 variant="outline-light"
                 href="mailto:yamani.yassine.dev@gmail.com"

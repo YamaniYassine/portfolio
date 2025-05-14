@@ -4,7 +4,7 @@ import Scrollspy from 'react-scrollspy';
 
 const Header = () => {
   return (
-    <Navbar bg="light" className="shadow-sm" expand="lg" fixed="top">
+    <Navbar bg="light" className="shadow-sm" expand="md" fixed="top">
       <Container>
         <Navbar.Brand href="#hero">Yamani Yassine</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -13,7 +13,7 @@ const Header = () => {
             items={['about', 'skills', 'projects', 'contact']}
             currentClassName="active"
             className="navbar-nav ms-auto text-end"
-            offset={-56}
+            offset={-350}
           >
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#skills">Skills</Nav.Link>

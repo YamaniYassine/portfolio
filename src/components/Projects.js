@@ -35,7 +35,7 @@ const Projects = () => {
   return (
     <div className="bg-white py-5 section" style={{ minHeight: '100vh' }} id="projects">
       <Container>
-        <h2 className="text-center mb-4">🛠️ Projects</h2>
+        <h2 className="text-center mb-4 display-6 fw-bold">🛠️ Projects</h2>
         <Row className="justify-content-center">
           {projects.map((project, idx) => (
             <Col md={6} lg={4} className="mb-4" key={idx}>
