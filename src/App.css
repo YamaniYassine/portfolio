@@ -15,3 +15,7 @@
 .btn:hover {
   transform: scale(1.1);
 }
+
+.icon-hover-scale:hover {
+  transform: scale(1.2);
+}

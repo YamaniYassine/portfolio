@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
-import { FaDownload } from 'react-icons/fa';
+import { FaDownload} from 'react-icons/fa';
+import { RiContactsLine } from "react-icons/ri";
 import profilePic from '../assets/Portrait.png';
 
 const Hero = () => {
@@ -29,7 +30,7 @@ const Hero = () => {
             </p>
             <div className="d-flex justify-content-center gap-3">
               <Button variant="outline-primary" size="lg" href="#contact">
-                📫 Contact Me
+              <RiContactsLine /> Contact Me
               </Button>
               <Button
                 variant="outline-secondary"
