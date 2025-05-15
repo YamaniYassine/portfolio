@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
   {
@@ -7,7 +8,7 @@ const projects = [
     description:
       "A web platform guiding international students through their educational journey in France 🇫🇷, covering visas, housing, enrollment, and academic milestones.",
     tech: ["React", "Node.js", "MongoDB", "Bootstrap", "Docker"],
-    image: "https://via.placeholder.com/600x300?text=StudentPath",
+    image: "https://websitesetup.org/wp-content/uploads/2020/12/the-ocean-resort-december-2020.jpg",
     github: "https://github.com/YamaniYassine",
     demo: "#"
   },
@@ -16,16 +17,7 @@ const projects = [
     description:
       "An online PDF editing tool allowing users to annotate, merge, and compress PDFs with ease using JavaScript and canvas manipulation.",
     tech: ["JavaScript", "HTML5", "Bootstrap", "PDF.js"],
-    image: "https://via.placeholder.com/600x300?text=PDF+Editor",
-    github: "https://github.com/YamaniYassine",
-    demo: "#"
-  },
-  {
-    title: "StudentPath",
-    description:
-      "A web platform guiding international students through their educational journey in France 🇫🇷, covering visas, housing, enrollment, and academic milestones.",
-    tech: ["React", "Node.js", "MongoDB", "Bootstrap", "Docker"],
-    image: "https://via.placeholder.com/600x300?text=StudentPath",
+    image: "https://websitesetup.org/wp-content/uploads/2020/12/the-ocean-resort-december-2020.jpg",
     github: "https://github.com/YamaniYassine",
     demo: "#"
   },
@@ -35,28 +27,47 @@ const Projects = () => {
   return (
     <div className="bg-white py-5 section" style={{ minHeight: '100vh' }} id="projects">
       <Container>
-        <h2 className="text-center mb-4 display-6 fw-bold">Projects</h2>
+        <h2 className="text-center mb-4 display-5 fw-bold">Projects</h2>
         <Row className="justify-content-center">
           {projects.map((project, idx) => (
-            <Col md={6} lg={4} className="mb-4" key={idx}>
-              <Card className="h-100 shadow-sm">
-                <Card.Img variant="top" src={project.image} />
-                <Card.Body>
+            <Col md={6} lg={6} className="mb-4 d-flex" key={idx}>
+              <Card className="h-100 shadow-sm project-card">
+                <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                  <Card.Img variant="top" src={project.image} style={{ cursor: 'pointer' }} />
+                </a>
+                <Card.Body className="d-flex flex-column">
                   <Card.Title>{project.title}</Card.Title>
                   <Card.Text>{project.description}</Card.Text>
-                  <div className="mb-2">
+                  <div className="mb-3">
                     {project.tech.map((tech, i) => (
-                      <Badge key={i} bg="secondary" className="me-1">{tech}</Badge>
+                      <Badge key={i} bg="dark" className="me-1 mb-1">{tech}</Badge>
                     ))}
                   </div>
-                  <Button variant="outline-primary" size="sm" href={project.github} target="_blank" className="me-2">GitHub</Button>
-                  <Button variant="outline-success" size="sm" href={project.demo} target="_blank">Demo</Button>
+                  <div className="mt-auto">
+                    <Button variant="outline-dark" size="sm" href={project.github} target="_blank" className="me-2">
+                      <FaGithub className="me-1" /> GitHub
+                    </Button>
+                    <Button variant="outline-success" size="sm" href={project.demo} target="_blank">
+                      <FaExternalLinkAlt className="me-1" /> Demo
+                    </Button>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
           ))}
         </Row>
       </Container>
+
+      {/* Extra styling for animation */}
+      <style jsx>{`
+        .project-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+          transform: scale(1.03);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+      `}</style>
     </div>
   );
 };

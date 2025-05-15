@@ -9,7 +9,7 @@ import {
 } from 'react-icons/si';
 
 const renderIcon = (IconComponent, name) => (
-  <OverlayTrigger placement="top" overlay={<Tooltip>{name}</Tooltip>}>
+  <OverlayTrigger placement="bottom" overlay={<Tooltip>{name}</Tooltip>}>
     <span className ="me-3 fs-2 icon-hover-scale"><IconComponent /></span>
   </OverlayTrigger>
 );
@@ -18,7 +18,7 @@ const Skills = () => {
   return (
     <div className="bg-light py-5 section" style={{ minHeight: '100vh' }} id="skills">
       <Container>
-        <h2 className="text-center mb-4 display-6 fw-bold">Skills</h2>
+        <h2 className="text-center mb-4 display-5 fw-bold">Skills</h2>
         <Row className="g-4 justify-content-center" style={{marginTop: '7%'}}>
           <Col md={6} lg={4}>
             <Card bg="secondary" text="white" className="text-center h-100">

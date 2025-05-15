@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="bg-white py-5 section" style={{ minHeight: '100vh' }} id="about">
       <Container>
-        <h2 className="text-center mb-4 display-6 fw-bold">About Me</h2>
+        <h2 className="text-center mb-4 display-5 fw-bold">About Me</h2>
         <Row className="justify-content-center" style={{marginTop: '7%'}}>
           <Col md={8} style={{width: '100%'}}>
             <Card className="border-0">
