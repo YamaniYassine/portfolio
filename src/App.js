@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -13,8 +14,9 @@ import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <>
+    <ThemeProvider>
       <Header />
-      <div id="hero" className="">
+      <div id="hero">
         <Hero />
         <About />
         <Skills />
@@ -23,6 +25,7 @@ function App() {
       </div>
       <ScrollToTop />
       <Footer />
+    </ThemeProvider>
     </>
   );
 }

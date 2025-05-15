@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { ThemeContext } from '../contexts/ThemeContext';
+
 
 const About = () => {
+  const { darkMode } = useContext(ThemeContext);
   return (
-    <div className="bg-white py-5 section" style={{ minHeight: '100vh' }} id="about">
+    <div className={`${darkMode ? 'bg-dark-2 ' : 'bg-white text-dark'} py-5 section`} style={{ minHeight: '100vh' }} id="about">
       <Container>
         <h2 className="text-center mb-4 display-5 fw-bold">About Me</h2>
         <Row className="justify-content-center" style={{marginTop: '7%'}}>

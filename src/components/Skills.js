@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { Container, Row, Col, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import {
   FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaPhp, FaGitAlt, FaDocker, FaVuejs,
@@ -15,8 +16,9 @@ const renderIcon = (IconComponent, name) => (
 );
 
 const Skills = () => {
+  const { darkMode } = useContext(ThemeContext);
   return (
-    <div className="bg-light py-5 section" style={{ minHeight: '100vh' }} id="skills">
+    <div className={`${darkMode ? 'bg-dark text-white' : 'bg-light text-dark'} py-5 section`} style={{ minHeight: '100vh' }} id="skills">
       <Container>
         <h2 className="text-center mb-4 display-5 fw-bold">Skills</h2>
         <Row className="g-4 justify-content-center" style={{marginTop: '7%'}}>

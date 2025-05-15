@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const projects = [
   {
@@ -24,8 +25,9 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { darkMode } = useContext(ThemeContext);
   return (
-    <div className="bg-white py-5 section" style={{ minHeight: '100vh' }} id="projects">
+    <div className={`${darkMode ? 'bg-dark-2 ' : 'bg-white text-dark'} py-5 section`} style={{ minHeight: '100vh' }} id="projects">
       <Container>
         <h2 className="text-center mb-4 display-5 fw-bold">Projects</h2>
         <Row className="justify-content-center">
@@ -58,7 +60,6 @@ const Projects = () => {
         </Row>
       </Container>
 
-      {/* Extra styling for animation */}
       <style jsx>{`
         .project-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;

@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import { FaDownload} from 'react-icons/fa';
 import { RiContactsLine } from "react-icons/ri";
 import profilePic from '../assets/Portrait.png';
+import { ThemeContext } from '../contexts/ThemeContext';
+
+
 
 const Hero = () => {
+  const { darkMode } = useContext(ThemeContext);
   return (
     <div
-      className="bg-light text-center d-flex align-items-center justify-content-center section"
+      className={`${darkMode ? 'bg-dark text-white' : 'bg-light text-dark'} text-center d-flex align-items-center justify-content-center section`}
       style={{ minHeight: '100vh' }}
       id="hero"
     >
@@ -26,7 +30,7 @@ const Hero = () => {
           <Col md={8}>
             <h1 className="display-4 fw-bold">Hi, I’m Yamani Yassine</h1>
             <p className="lead mb-4">
-              Software Engineer passionate about building modern and scalable web applications.
+              <strong className="fw-bold">Software Engineer</strong> passionate about building modern and scalable web applications.
             </p>
             <div className="d-flex justify-content-center gap-3">
               <Button variant="outline-primary" size="lg" href="#contact">

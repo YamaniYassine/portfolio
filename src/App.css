@@ -19,3 +19,23 @@
 .icon-hover-scale:hover {
   transform: scale(1.2);
 }
+
+.bg-dark-2 {
+  background-color: #2f3336 !important;
+}
+
+body.light-mode {
+  background-color: #f8f9fa;
+}
+
+body.dark-mode {
+  background-color: #6a6a6a;
+  color: #e1e1e1;
+}
+
+.card.dark-mode,
+.navbar.dark,
+.footer.dark {
+  background-color: #1f1f1f !important;
+  color: white !important;
+}

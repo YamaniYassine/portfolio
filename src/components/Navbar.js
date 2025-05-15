@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import Scrollspy from 'react-scrollspy';
+import { ThemeContext } from '../contexts/ThemeContext';
+import CustomToggleSwitch from './Darkmodeswitch/CustomToggleSwitch'
 
 const Header = () => {
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <Navbar bg="light" className="shadow-sm" expand="md" fixed="top">
+    <Navbar bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"} className="shadow-sm" expand="md" fixed="top">
       <Container>
         <Navbar.Brand href="#hero">Yamani Yassine</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Scrollspy
             items={['about', 'skills', 'projects', 'contact']}
             currentClassName="active"
-            className="navbar-nav ms-auto text-end"
+            className="navbar-nav text-end"
             offset={-350}
           >
             <Nav.Link href="#about">About</Nav.Link>
@@ -21,6 +25,7 @@ const Header = () => {
             <Nav.Link href="#contact">Contact</Nav.Link>
           </Scrollspy>
         </Navbar.Collapse>
+        <CustomToggleSwitch darkMode={darkMode} toggleTheme={toggleTheme} />
       </Container>
     </Navbar>
   );
