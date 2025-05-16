@@ -33,20 +33,20 @@ const Projects = () => {
         <Row className="justify-content-center">
           {projects.map((project, idx) => (
             <Col md={6} lg={6} className="mb-4 d-flex" key={idx}>
-              <Card className="h-100 shadow-sm project-card">
+              <Card className={`${darkMode ? 'dark-mode ' : 'light-mode text-dark'} h-100 shadow-sm project-card p-3`}>
                 <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                  <Card.Img variant="top" src={project.image} style={{ cursor: 'pointer' }} />
+                  <Card.Img variant="top" src={project.image} style={{ cursor: 'pointer', borderRadius: 5 }} />
                 </a>
                 <Card.Body className="d-flex flex-column">
                   <Card.Title>{project.title}</Card.Title>
                   <Card.Text>{project.description}</Card.Text>
-                  <div className="mb-3">
+                  <div className="mb-3 text-center">
                     {project.tech.map((tech, i) => (
-                      <Badge key={i} bg="dark" className="me-1 mb-1">{tech}</Badge>
+                      <Badge key={i} bg={darkMode ? "light" : "dark"} className={`${darkMode ? 'text-dark' : ''} me-1 mb-1`}>{tech}</Badge>
                     ))}
                   </div>
-                  <div className="mt-auto">
-                    <Button variant="outline-dark" size="sm" href={project.github} target="_blank" className="me-2">
+                  <div className="mt-auto text-center">
+                    <Button  variant={darkMode ? "outline-light" : "outline-dark"} size="sm" href={project.github} target="_blank" className="me-2">
                       <FaGithub className="me-1" /> GitHub
                     </Button>
                     <Button variant="outline-success" size="sm" href={project.demo} target="_blank">

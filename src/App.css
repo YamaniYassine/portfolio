@@ -33,9 +33,18 @@ body.dark-mode {
   color: #e1e1e1;
 }
 
+.shadow-light {
+  box-shadow: 0 2px 3px rgba(140, 140, 140, 0.2);
+}
+
+
 .card.dark-mode,
 .navbar.dark,
 .footer.dark {
-  background-color: #1f1f1f !important;
+  background-color: #212529 !important;
   color: white !important;
+}
+
+.card.light-mode{
+  background-color: #f8f9fa !important;
 }

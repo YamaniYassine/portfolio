@@ -23,11 +23,13 @@ const Footer = () => {
           <p className="mb-0">© {new Date().getFullYear()} <strong>Yamani Yassine</strong> All rights reserved.</p>
           
           {showConsent && (
-            <div className="d-flex flex-wrap align-items-center gap-2 ms-3">
+            <><div className="d-flex flex-wrap align-items-center gap-2">
               <p className="mb-0 text-white-muted">This website uses cookies to improve the user experience.</p>
+            </div>
+            <div className="d-flex flex-wrap align-items-center gap-2">
               <Button variant="outline-light" size="sm" onClick={() => handleConsent(true)}>Accept</Button>
               <Button variant="outline-light" size="sm" onClick={() => handleConsent(false)}>Decline</Button>
-            </div>
+            </div></>
           )}
         </div>
       </Container>
