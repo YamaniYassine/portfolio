@@ -7,7 +7,7 @@ const projects = [
   {
     title: "StudentPath",
     description:
-      "A web platform guiding international students through their educational journey in France 🇫🇷, covering visas, housing, enrollment, and academic milestones.",
+      "A web platform guiding international students through their educational journey in France 🇫🇷.",
     tech: ["React", "Node.js", "MongoDB", "Bootstrap", "Docker"],
     image: "https://websitesetup.org/wp-content/uploads/2020/12/the-ocean-resort-december-2020.jpg",
     github: "https://github.com/YamaniYassine",
@@ -16,8 +16,8 @@ const projects = [
   {
     title: "PDF Editor Web App",
     description:
-      "An online PDF editing tool allowing users to annotate, merge, and compress PDFs with ease using JavaScript and canvas manipulation.",
-    tech: ["JavaScript", "HTML5", "Bootstrap", "PDF.js"],
+      "An online PDF editing tool allowing users to annotate, merge, and compress PDFs with ease using TypeScript.",
+    tech: ["TypeScript", "HTML5", "Bootstrap", "PDF.js"],
     image: "https://websitesetup.org/wp-content/uploads/2020/12/the-ocean-resort-december-2020.jpg",
     github: "https://github.com/YamaniYassine",
     demo: "#"
