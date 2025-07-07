@@ -12,16 +12,26 @@
   border-bottom: 2px solid #6a6a6a;
   transform: scale(1.1);
 }
+
+.btn {
+  transition: all 0.2s ease;
+}
+
 .btn:hover {
   transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .icon-hover-scale:hover {
   transform: scale(1.2);
 }
 
+.bg-dark-1 {
+  background-color: hsl(220, 13%, 10%) !important;
+}
+
 .bg-dark-2 {
-  background-color: #343A40 !important;
+  background-color: hsl(220, 17%, 18%) !important;
 }
 
 body.light-mode {
@@ -35,6 +45,12 @@ body.dark-mode {
 
 .shadow-light {
   box-shadow: 0 2px 3px rgba(140, 140, 140, 0.2);
+}
+
+
+.badge:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
 }
 
 

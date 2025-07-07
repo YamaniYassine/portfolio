@@ -17,7 +17,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-dark text-white text-center py-2" style={{ borderTop: '1px solid #6a6a6a' }}>
+    <footer className="bg-dark-1 text-white text-center py-2" style={{ borderTop: '1px solid #6a6a6a' }}>
       <Container>
         <div className="d-flex flex-wrap justify-content-center align-items-center gap-2 small">
           <p className="mb-0">© {new Date().getFullYear()} <strong>Yamani Yassine</strong> All rights reserved.</p>

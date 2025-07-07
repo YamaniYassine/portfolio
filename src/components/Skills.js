@@ -18,9 +18,9 @@ const renderIcon = (IconComponent, name) => (
 const Skills = () => {
   const { darkMode } = useContext(ThemeContext);
   return (
-    <div className={`${darkMode ? 'bg-dark text-white' : 'bg-light text-dark'} py-5 section`} style={{ minHeight: '100vh' }} id="skills">
+    <div className={`${darkMode ? 'bg-dark-1 text-white' : 'bg-light text-dark'} py-5 section`} style={{ minHeight: '100vh' }} id="skills">
       <Container>
-        <h2 className="text-center mb-4 display-5 fw-bold">Skills</h2>
+        <h2 className="text-center mb-5 display-4 fw-bold">Skills</h2>
         <Row className="g-4 justify-content-center" style={{marginTop: '7%'}}>
           <Col md={6} lg={4}>
             <Card bg="secondary" text="white" className="text-center h-100">

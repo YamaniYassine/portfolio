@@ -8,10 +8,10 @@ const About = () => {
   return (
     <div className={`${darkMode ? 'bg-dark-2 ' : 'bg-white text-dark'} py-5 d-flex section`} style={{ minHeight: '100vh' }} id="about">
       <Container>
-        <h2 className="text-center mb-4 display-5 fw-bold">About Me</h2>
+        <h2 className="text-center mb-5 display-4 fw-bold">About Me</h2>
         <Row className="justify-content-center" style={{marginTop: '7%'}}>
           <Col md={8} style={{width: '100%'}}>
-            <Card className={`${darkMode ? 'dark-mode' : 'light-mode'} border-0 `}>
+            <Card className={`${darkMode ? 'bg-dark-1 text-white' : 'light-mode'} border-0 `}>
               <Card.Body>
                 <Card.Text>
                   Hello! I’m <strong>Yamani Yassine</strong>, a software engineer passionate about building high-quality, user-focused web applications.

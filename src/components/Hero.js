@@ -11,7 +11,7 @@ const Hero = () => {
   const { darkMode } = useContext(ThemeContext);
   return (
     <div
-      className={`${darkMode ? 'bg-dark text-white' : 'bg-light text-dark'} text-center d-flex align-items-center justify-content-center section`}
+      className={`${darkMode ? 'bg-dark-1 text-white' : 'bg-light text-dark'} text-center d-flex align-items-center justify-content-center section`}
       style={{ minHeight: '100vh' }}
       id="hero"
     >
