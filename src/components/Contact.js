@@ -3,9 +3,9 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 const Contact = () => {
   return (
-    <div className="bg-dark-1 text-white py-3 section" id="contact">
+    <div className="bg-dark-1 text-white py-2 section" id="contact">
       <Container>
-        <h2 className="text-center mb-4 display-6 fw-bold">Contact Me</h2>
+        <h2 className="text-center mb-2 display-6 fw-bold">Contact Me</h2>
         <Row className="justify-content-center">
           <Col md={8} className="text-center">
             <div className="mb-2">

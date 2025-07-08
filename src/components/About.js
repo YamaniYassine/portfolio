@@ -6,7 +6,7 @@ import { ThemeContext } from '../contexts/ThemeContext';
 const About = () => {
   const { darkMode } = useContext(ThemeContext);
   return (
-    <div className={`${darkMode ? 'bg-dark-2 ' : 'bg-white text-dark'} py-5 d-flex section`} style={{ minHeight: '100vh' }} id="about">
+    <div className={`${darkMode ? 'bg-dark-2 ' : 'bg-white text-dark'} position-relative py-5 d-flex section`} style={{ minHeight: '100vh' }} id="about">
       <Container>
         <h2 className="text-center mb-5 display-4 fw-bold">About Me</h2>
         <Row className="justify-content-center" style={{marginTop: '7%'}}>
@@ -37,6 +37,17 @@ const About = () => {
           </Col>
         </Row>
       </Container>
+      <svg
+        className="position-absolute bottom-0 start-0 w-100"
+        viewBox="0 0 1440 400"
+        preserveAspectRatio="none"
+        style={{ height: '100px', transform: 'scaleY(-1)' }}
+      >
+        <path
+          fill={darkMode ? 'hsl(220, 13%, 10%)' : 'hsl(210, 17%, 98%)'}
+          d="M0,96L48,106.7C96,117,192,139,288,149.3C384,160,480,160,576,144C672,128,768,96,864,80C960,64,1056,64,1152,85.3C1248,107,1344,149,1392,170.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
     </div>
   );
 };
