@@ -2,30 +2,49 @@ import React, { useContext } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { ThemeContext } from '../contexts/ThemeContext';
 
-
 const About = () => {
   const { darkMode } = useContext(ThemeContext);
+
   return (
-    <div className={`${darkMode ? 'bg-dark-2 ' : 'bg-white text-dark'} position-relative py-5 d-flex section`} style={{ minHeight: '100vh' }} id="about">
-      <Container>
-        <h2 className="text-center mb-5 display-4 fw-bold">About Me</h2>
-        <Row className="justify-content-center" style={{marginTop: '7%'}}>
-          <Col md={8} style={{width: '100%'}}>
-            <Card className={`${darkMode ? 'bg-dark-1 text-white' : 'light-mode'} border-0 `}>
+    <div
+      className={`${darkMode ? 'bg-dark-2' : 'bg-white text-dark'} position-relative section`}
+      style={{ minHeight: '100vh' }}
+      id="about"
+    >
+      <Container fluid className="vh-100">
+        <Row
+          className="vh-20 d-flex align-items-center justify-content-center"
+          style={{ height: '20%' }}
+        >
+          <Col xs="auto">
+            <h2 className="text-center display-4 fw-bold m-0">About Me</h2>
+          </Col>
+        </Row>
+
+        <Row
+          className="vh-60 d-flex align-items-center justify-content-center"
+          style={{ height: '60%' }}
+        >
+          <Col md={8}>
+            <Card className={`${darkMode ? 'bg-dark-1 text-white' : 'light-mode'} border-0`}>
               <Card.Body>
                 <Card.Text>
-                  Hello! I’m <strong>Yamani Yassine</strong>, a software engineer passionate about building high-quality, user-focused web applications.
+                  Hello! I’m <strong>Yamani Yassine</strong>, a software engineer passionate about
+                  building high-quality, user-focused web applications.
                 </Card.Text>
                 <Card.Text>
-                  I specialize in full-stack development using modern technologies like <strong>React, Node.js, MongoDB, and Docker</strong>. My goal is to build scalable, performant solutions that solve real-world problems.
+                  I specialize in full-stack development using modern technologies like{' '}
+                  <strong>React, Node.js, MongoDB, and Docker</strong>. My goal is to build scalable,
+                  performant solutions that solve real-world problems.
                 </Card.Text>
                 <Card.Text>
-                  I’m currently working on a platform to support international students navigating their journey in France 🇫🇷 — from visa to diploma 🎓.
+                  I’m currently working on a platform to support international students navigating
+                  their journey in France 🇫🇷 — from visa to diploma 🎓.
                 </Card.Text>
                 <Card.Text>
                   I also value clean communication, teamwork, and lifelong learning.
                 </Card.Text>
-                <hr className='my-5'/>
+                <hr className="my-5" />
                 <Card.Text>
                   <strong>Tech Stack:</strong> React, Node.js, Express, MongoDB, Docker, Git, Bootstrap
                 </Card.Text>

@@ -8,7 +8,7 @@ const Header = () => {
   const { darkMode, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <Navbar  variant={darkMode ? "dark" : "light"} className={darkMode ? 'bg-dark-2' : 'bg-white shadow-sm'} expand="md" fixed="top">
+    <Navbar  variant={darkMode ? "dark" : "light"} className={`${darkMode ? 'bg-dark-2' : 'bg-white'} shadow-sm`} expand="md" fixed="top">
       <Container>
         <Navbar.Brand href="#hero">Yamani Yassine</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

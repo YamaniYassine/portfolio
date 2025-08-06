@@ -19,8 +19,17 @@ const Skills = () => {
   const { darkMode } = useContext(ThemeContext);
   return (
     <div className={`${darkMode ? 'bg-dark-1 text-white' : 'bg-light text-dark'} position-relative py-5 section`} style={{ minHeight: '100vh' }} id="skills">
-      <Container>
-        <h2 className="text-center mb-5 display-4 fw-bold">Skills</h2>
+      <Container className="vh-100">
+        
+        {/* Title Row */}
+        <Row
+          className="d-flex align-items-center justify-content-center"
+          style={{ height: '20%' }}
+        >
+          <Col xs="auto">
+            <h2 className="text-center display-4 fw-bold m-0">Skills</h2>
+          </Col>
+        </Row>
         <Row className="g-4 justify-content-center" style={{marginTop: '7%'}}>
           <Col md={6} lg={4}>
             <Card bg="secondary" text="white" className="text-center h-100">

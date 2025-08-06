@@ -3,14 +3,15 @@ import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { ThemeContext } from '../contexts/ThemeContext';
 import pdfhome from '../assets/PdfHome.png';
+import devopshome from '../assets/DevOps-Home.png';
 
 const projects = [
   {
-    title: "StudentPath",
+    title: "Jeu Concours",
     description:
-      "A web platform guiding international students through their educational journey in France 🇫🇷.",
-    tech: ["React", "Bootstrap", "Node.js", "MongoDB", "Docker"],
-    image: "https://websitesetup.org/wp-content/uploads/2020/12/the-ocean-resort-december-2020.jpg",
+      "A contest web platform for the tea company 'TheTipTio', featuring three user roles with separate dashboards. Includes a DevOps pipeline that automates the workflow using Docker and Jenkins.",
+    tech: ["React", "Bootstrap", "Node.js", "MongoDB", "Docker", "Jenkins"],
+    image: devopshome,
     github: "https://github.com/YamaniYassine/DevOps",
     demo: "#"
   },
@@ -33,9 +34,16 @@ const Projects = () => {
       style={{ minHeight: '100vh' }}
       id="projects"
     >
-      <Container>
-        <h2 className="text-center mb-5 display-4 fw-bold">Projects</h2>
-        <Row xs={1} sm={1} md={2} lg={2} className="g-5 justify-content-center">
+      <Container  className="vh-100">
+        <Row
+          className="vh-10 d-flex align-items-center justify-content-center"
+          style={{ height: '10%' }}
+        >
+          <Col xs="auto">
+            <h2 className="text-center display-4 fw-bold m-0">Projects</h2>
+          </Col>
+        </Row>
+        <Row xs={1} sm={1} md={2} lg={2} className="g-5 justify-content-center" style={{marginTop: '1%'}}>
           {projects.map((project, idx) => (
             <Col className="d-flex" key={idx}>
               <Card
