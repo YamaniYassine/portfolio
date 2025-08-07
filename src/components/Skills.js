@@ -20,8 +20,6 @@ const Skills = () => {
   return (
     <div className={`${darkMode ? 'bg-dark-1 text-white' : 'bg-light text-dark'} position-relative py-5 section`} style={{ minHeight: '100vh' }} id="skills">
       <Container className="vh-100">
-        
-        {/* Title Row */}
         <Row
           className="d-flex align-items-center justify-content-center"
           style={{ height: '20%' }}
