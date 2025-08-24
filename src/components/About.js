@@ -42,7 +42,7 @@ const About = () => {
                 Beyond coding, I value <strong>clean communication, teamwork, and Agile practices (Scrum)</strong>. 
                 I integrate <strong>testing (Jest, TDD)</strong>, monitoring (<strong>Prometheus, Grafana</strong>) and code quality tools (<strong>SonarQube</strong>) into my workflows to ensure reliability.
               </Card.Text>
-              <hr className="my-5" />
+              <hr className="my-4" />
               <Card.Text>
                 <strong>Tech Stack:</strong> JavaScript, TypeScript, Python, React, Vue, Node.js, FastAPI, PHP, Docker, Jenkins, Git.
               </Card.Text>

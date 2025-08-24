@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import { FaDownload} from 'react-icons/fa';
 import { RiContactsLine } from "react-icons/ri";
-import profilePic from '../assets/Portrait.png';
+import profilePic from '../assets/Portrait3.png';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 
@@ -23,7 +23,7 @@ const Hero = () => {
               roundedCircle
               fluid
               alt="Yamani Yassine"
-              style={{ width: '70%', height: '70%', objectFit: 'cover' }}
+              style={{ width: '70%', height: '70%', objectFit: 'cover', backgroundColor: '#DEECF8' }}
             />
           </Col>
           
