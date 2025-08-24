@@ -39,7 +39,7 @@ const Hero = () => {
               <Button
                 variant="outline-secondary"
                 size="lg"
-                href="/portfolio/YAMANI-YASSINE-CV-2025.pdf.pdf"
+                href="/portfolio/YAMANI-YASSINE-CV-2025.pdf"
                 download
               >
                 Download CV <FaDownload className="ms-2" />
