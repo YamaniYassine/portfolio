@@ -13,7 +13,7 @@ const projects = [
     tech: ["React", "Bootstrap", "Node.js", "MongoDB", "Docker", "Jenkins"],
     image: devopshome,
     github: "https://github.com/YamaniYassine/DevOps",
-    demo: "/portfolio/tiptop_documentation_v4.pdf"
+    demo: "/portfolio/TheTipTop-documentation.pdf.pdf"
   },
   {
     title: "PDF Editor",
@@ -22,7 +22,7 @@ const projects = [
     tech: ["Next.js", "TailwindCSS", "Python", "PyMuPDF", "FastAPI"],
     image: pdfhome,
     github: "https://github.com/YamaniYassine/PDF-editor-web-app",
-    demo: "/portfolio/Documentation PDF Editor.pdf"
+    demo: "/portfolio/PDF-EDITOR-documentation.pdf"
   },
 ];
 
