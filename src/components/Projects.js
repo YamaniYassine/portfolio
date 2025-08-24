@@ -13,7 +13,7 @@ const projects = [
     tech: ["React", "Bootstrap", "Node.js", "MongoDB", "Docker", "Jenkins"],
     image: devopshome,
     github: "https://github.com/YamaniYassine/DevOps",
-    demo: "/portfolio/TheTipTop-documentation.pdf.pdf"
+    demo: "/portfolio/TheTipTop-documentation.pdf"
   },
   {
     title: "PDF Editor",
