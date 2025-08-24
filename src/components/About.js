@@ -26,33 +26,32 @@ const About = () => {
           style={{ height: '60%' }}
         >
           <Col md={8}>
-            <Card className={`${darkMode ? 'bg-dark-1 text-white' : 'light-mode'} border-0`}>
-              <Card.Body>
-                <Card.Text>
-                  Hello! I’m <strong>Yamani Yassine</strong>, a software engineer passionate about
-                  building high-quality, user-focused web applications.
-                </Card.Text>
-                <Card.Text>
-                  I specialize in full-stack development using modern technologies like{' '}
-                  <strong>React, Node.js, MongoDB, and Docker</strong>. My goal is to build scalable,
-                  performant solutions that solve real-world problems.
-                </Card.Text>
-                <Card.Text>
-                  I’m currently working on a platform to support international students navigating
-                  their journey in France 🇫🇷 — from visa to diploma 🎓.
-                </Card.Text>
-                <Card.Text>
-                  I also value clean communication, teamwork, and lifelong learning.
-                </Card.Text>
-                <hr className="my-5" />
-                <Card.Text>
-                  <strong>Tech Stack:</strong> React, Node.js, Express, MongoDB, Docker, Git, Bootstrap
-                </Card.Text>
-                <Card.Text>
-                  <strong>Currently exploring:</strong> TypeScript, system design, and cloud deployment.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+          <Card className={`${darkMode ? 'bg-dark-1 text-white' : 'light-mode'} border-0`}>
+            <Card.Body>
+              <Card.Text>
+                Hello! I’m <strong>Yamani Yassine</strong>, a software engineer passionate about designing and delivering high-quality, user-focused web applications.
+              </Card.Text>
+              <Card.Text>
+                I specialize in <strong>full-stack development</strong> across JavaScript and PhP ecosystems, with hands-on experience in React, Vue, Node.js, FastAPI, and PHP frameworks (Laravel, Symfony). 
+                My goal is to build <strong>scalable, performant, and secure solutions</strong> that solve real-world problems and deliver measurable value.
+              </Card.Text>
+              <Card.Text>
+                I’ve led projects from conception to production — such as <strong>TheTipTop</strong>, a full MERN platform with CI/CD pipelines and monitoring, and a <strong>PDF Editor Web App</strong>, enabling real-time editing, merging, and compression of PDFs using FastAPI and Next.js.
+              </Card.Text>
+              <Card.Text>
+                Beyond coding, I value <strong>clean communication, teamwork, and Agile practices (Scrum)</strong>. 
+                I integrate <strong>testing (Jest, TDD)</strong>, monitoring (<strong>Prometheus, Grafana</strong>) and code quality tools (<strong>SonarQube</strong>) into my workflows to ensure reliability.
+              </Card.Text>
+              <hr className="my-5" />
+              <Card.Text>
+                <strong>Tech Stack:</strong> JavaScript, TypeScript, Python, React, Vue, Node.js, FastAPI, PHP, Docker, Jenkins, Git.
+              </Card.Text>
+              <Card.Text>
+                <strong>Currently exploring:</strong> Cloud deployment, system design, and application security.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+
           </Col>
         </Row>
       </Container>
