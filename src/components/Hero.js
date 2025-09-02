@@ -39,8 +39,8 @@ const Hero = () => {
               <Button
                 variant="outline-secondary"
                 size="lg"
-                href={`${process.env.PUBLIC_URL}/YAMANI-YASSINE-CV-2025.pdf`}
-                download="YAMANI-YASSINE-CV-2025.pdf"
+                href={`${process.env.PUBLIC_URL}/YAMANI-YASSINE-CV.pdf`}
+                download="YAMANI-YASSINE-CV.pdf"
               >
                 Download CV <FaDownload className="ms-2" />
               </Button>
