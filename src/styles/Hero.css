@@ -1,0 +1,201 @@
+/* ── Hero ───────────────────────────────────────────── */
+.hero-section {
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 48px;
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Dot grid background */
+  .hero-dot-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(55,138,221,0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  body.dark-mode .hero-dot-grid {
+    background-image: radial-gradient(circle, rgba(55,138,221,0.07) 1px, transparent 1px);
+  }
+  
+  /* Availability badge */
+  .hero-avail {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--color-green-bg);
+    color: var(--color-green-dark);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 99px;
+  }
+  .hero-avail-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-green);
+    display: inline-block;
+    box-shadow: 0 0 0 2.5px rgba(99,153,34,0.25);
+    animation: heroPulse 2s ease-in-out infinite;
+  }
+  body.dark-mode .hero-avail-dot {
+    box-shadow: 0 0 0 2.5px rgba(93,202,165,0.25);
+  }
+  
+  /* Name + role */
+  .hero-name {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+    margin-bottom: 8px;
+  }
+  .hero-role {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 600;
+    color: var(--color-blue);
+    min-height: 34px;
+  }
+  .hero-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--color-blue-dark);
+    margin-left: 3px;
+    vertical-align: middle;
+    animation: heroBlink .9s step-end infinite;
+  }
+  
+  /* Description + location */
+  .hero-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text-body);
+    max-width: 460px;
+    margin-bottom: 12px;
+  }
+  .hero-location {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 18px;
+  }
+  
+  /* Tech pills */
+  .hero-pill {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 99px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-body);
+    background: var(--color-chip-bg);
+    margin: 0 6px 6px 0;
+    transition: all .2s ease;
+    cursor: default;
+  }
+  .hero-pill:hover {
+    background: var(--color-blue-bg);
+    border-color: var(--color-blue);
+    color: var(--color-blue-dark);
+    transform: translateY(-1px);
+  }
+  
+  /* CTA buttons */
+  .hero-btn-primary:hover  { opacity: .9; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(24,95,165,.35) !important; }
+  .hero-btn-secondary:hover { opacity: .9; transform: translateY(-2px); }
+  
+  /* Social buttons */
+  .hero-soc {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-body);
+    background: transparent;
+    transition: all .2s ease;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .hero-soc:hover {
+    background: var(--color-blue-dark);
+    color: #fff;
+    border-color: var(--color-blue-dark);
+    transform: translateY(-2px);
+  }
+  
+  /* Stat cards */
+  .hero-stat {
+    flex: 1 1 calc(50% - 6px);
+    background: var(--color-chip-bg);
+    border: 0.5px solid var(--color-border);
+    border-radius: 10px;
+    padding: 10px 8px;
+    text-align: center;
+    transition: all .2s ease;
+    cursor: default;
+  }
+  .hero-stat:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-blue);
+    box-shadow: 0 6px 18px rgba(55,138,221,0.12);
+  }
+  .hero-stat-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-blue);
+  }
+  .hero-stat-label {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+  
+  /* Scroll indicator */
+  .hero-scroll {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .hero-scroll-label {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    letter-spacing: .05em;
+  }
+  .hero-scroll-arrow {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    animation: heroBounce 1.3s ease-in-out infinite;
+  }
+  
+  /* Staggered entrance rows */
+  .hr1 { animation: heroFadeUp .45s ease both; }
+  .hr2 { animation: heroFadeUp .45s ease .07s  both; }
+  .hr3 { animation: heroFadeUp .45s ease .14s  both; }
+  .hr4 { animation: heroFadeUp .45s ease .21s  both; }
+  .hr5 { animation: heroFadeUp .45s ease .28s  both; }
+  .hr6 { animation: heroFadeUp .45s ease .35s  both; }
+  .hr7 { animation: heroFadeUp .45s ease .42s  both; }
+  .hero-aside { animation: heroFadeUp .45s ease .18s both; }
+  
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero-aside  { margin-top: 1.5rem; }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
+    .hero-buttons .btn { width: 100%; }
+  }

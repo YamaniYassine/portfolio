@@ -1,0 +1,137 @@
+/* ── About ──────────────────────────────────────────── */
+.about-section {
+    background: var(--color-bg-primary);
+  }
+  
+  .about-story-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--color-blue-dark);
+    margin-bottom: 7px;
+  }
+  
+  .about-story-text {
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--color-text-body);
+  }
+  
+  .about-divider {
+    height: 1px;
+    background: var(--color-border);
+    margin: 24px 0;
+  }
+  
+  /* Currently exploring box */
+  .about-exploring {
+    background: var(--color-green-bg);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .about-exploring-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--color-green-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .about-exploring-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--color-green-dark);
+    margin-bottom: 4px;
+  }
+  .about-exploring-text {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--color-green-dark);
+  }
+  
+  /* Sidebar cards */
+  .about-hi-card {
+    background: var(--color-bg-surface);
+    border: 0.5px solid var(--color-border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: all .22s ease;
+    cursor: default;
+  }
+  .about-hi-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-blue);
+    box-shadow: 0 6px 20px rgba(55,138,221,0.12);
+  }
+  
+  .about-sidebar-card {
+    background: var(--color-bg-surface);
+    border: 0.5px solid var(--color-border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  
+  .about-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 12px;
+  }
+  
+  /* Value pills */
+  .about-value-pill {
+    background: var(--color-bg-primary);
+    border: 0.5px solid var(--color-border);
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 12px;
+    color: var(--color-text-body);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: all .2s ease;
+  }
+  .about-value-pill:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-border-strong);
+  }
+  
+  /* Language bars */
+  .about-lang-bar-track {
+    flex: 1;
+    height: 5px;
+    background: var(--color-border);
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 0 12px;
+  }
+  .about-lang-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    background: var(--color-blue);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .8s ease var(--delay, 0s);
+  }
+  .ab-in .about-lang-bar-fill {
+    transform: scaleX(1);
+  }
+  
+  /* Responsive */
+  @media (max-width: 767px) {
+    .about-layout { grid-template-columns: 1fr !important; }
+    .about-sidebar { margin-top: 2rem; }
+  }

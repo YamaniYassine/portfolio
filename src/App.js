@@ -16,13 +16,11 @@ function App() {
     <>
     <ThemeProvider>
       <Header />
-      <div id="hero">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </div>
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
       <ScrollToTop />
       <Footer />
     </ThemeProvider>

@@ -1,70 +1,145 @@
-import React, { useContext } from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import { ThemeContext } from '../contexts/ThemeContext';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { useInView } from '../hooks/useInView';
+import SectionHeader from './common/SectionHeader';
 
+/* ─── Data ──────────────────────────────────────────────── */
+
+const VALUES = [
+  { label: 'Clean code',  color: '#185FA5' },
+  { label: 'TDD',         color: '#3B6D11' },
+  { label: 'Agile/Scrum', color: '#993C1D' },
+  { label: 'CI/CD',       color: '#534AB7' },
+  { label: 'Monitoring',  color: '#085041' },
+  { label: 'Security',    color: '#854F0B' },
+];
+
+const LANGUAGES = [
+  { name: 'Arabic',  level: 'Native', pct: 100 },
+  { name: 'French',  level: 'Fluent', pct: 95  },
+  { name: 'English', level: 'Fluent', pct: 85  },
+];
+
+/* ─── Component ─────────────────────────────────────────── */
 const About = () => {
-  const { darkMode } = useContext(ThemeContext);
+  const [sectionRef, inView] = useInView();
 
   return (
     <div
-      className={`${darkMode ? 'bg-dark-2' : 'bg-white text-dark'} position-relative section`}
-      style={{ minHeight: '100vh' }}
+      ref={sectionRef}
+      className={`portfolio-section about-section section${inView ? ' ab-in' : ''}`}
       id="about"
     >
-      <Container fluid className="vh-100">
-        <Row
-          className="vh-20 d-flex align-items-center justify-content-center"
-          style={{ height: '20%' }}
-        >
-          <Col xs="auto">
-            <h2 className="text-center display-4 fw-bold m-0">About Me</h2>
-          </Col>
-        </Row>
+      <Container>
 
-        <Row
-          className="vh-60 d-flex align-items-center justify-content-center"
-          style={{ height: '60%' }}
-        >
-          <Col md={8}>
-          <Card className={`${darkMode ? 'bg-dark-1 text-white' : 'light-mode'} border-0`}>
-            <Card.Body>
-              <Card.Text>
-                Hello! I’m <strong>Yamani Yassine</strong>, a software engineer passionate about designing and delivering high-quality, user-focused web applications.
-              </Card.Text>
-              <Card.Text>
-                I specialize in <strong>full-stack development</strong> across JavaScript and PhP ecosystems, with hands-on experience in React, Vue, Node.js, FastAPI, and PHP frameworks (Laravel, Symfony). 
-                My goal is to build <strong>scalable, performant, and secure solutions</strong> that solve real-world problems and deliver measurable value.
-              </Card.Text>
-              <Card.Text>
-                I’ve led projects from conception to production — such as <strong>TheTipTop</strong>, a full MERN platform with CI/CD pipelines and monitoring, and a <strong>PDF Editor Web App</strong>, enabling real-time editing, merging, and compression of PDFs using FastAPI and Next.js.
-              </Card.Text>
-              <Card.Text>
-                Beyond coding, I value <strong>clean communication, teamwork, and Agile practices (Scrum)</strong>. 
-                I integrate <strong>testing (Jest, TDD)</strong>, monitoring (<strong>Prometheus, Grafana</strong>) and code quality tools (<strong>SonarQube</strong>) into my workflows to ensure reliability.
-              </Card.Text>
-              <hr className="my-4" />
-              <Card.Text>
-                <strong>Tech Stack:</strong> JavaScript, TypeScript, Python, React, Vue, Node.js, FastAPI, PHP, Docker, Jenkins, Git.
-              </Card.Text>
-              <Card.Text>
-                <strong>Currently exploring:</strong> Cloud deployment, system design, and application security.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+        <SectionHeader
+          eyebrow="About me"
+          title={<>Turning ideas into<br />production-ready apps</>}
+          subtitle="1+ years building full-stack applications — from clean UIs to scalable backends with DevOps pipelines baked in."
+          inView={inView}
+        />
 
-          </Col>
-        </Row>
+        {/* ── Body grid ── */}
+        <div
+          className="about-layout"
+          style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '44px', alignItems: 'start' }}
+        >
+          {/* LEFT — story */}
+          <div className={`fade-up${inView ? ' in-view' : ''}`} style={{ '--delay': '0.24s' }}>
+
+            <div style={{ marginBottom: '14px' }}>
+              <div className="about-story-label">Who I am</div>
+              <p className="about-story-text">
+                I'm a software engineer passionate about designing and delivering high-quality,
+                user-focused web applications. I specialize in full-stack development across
+                JavaScript and Java ecosystems — React, Angular, Node.js, Spring Boot, FastAPI.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '14px' }}>
+              <div className="about-story-label">What I build</div>
+              <p className="about-story-text">
+                I've led projects from conception to production — from a full MERN contest platform
+                with CI/CD pipelines and live monitoring, to a browser-based PDF editor supporting
+                real-time annotation, merging and compression built with FastAPI and Next.js.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '14px' }}>
+              <div className="about-story-label">How I work</div>
+              <p className="about-story-text">
+                I value clean communication, teamwork and Agile practices. I integrate testing
+                (Jest, TDD), monitoring (Prometheus, Grafana) and code quality tools (SonarQube)
+                into every workflow to ship reliable, maintainable software.
+              </p>
+            </div>
+
+            <div className="about-divider" />
+
+            {/* Currently exploring */}
+            <div className="about-exploring">
+              <div className="about-exploring-icon">→</div>
+              <div>
+                <div className="about-exploring-label">Currently exploring</div>
+                <div className="about-exploring-text">
+                  Cloud deployment, system design, and application security.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT — sidebar */}
+          <div
+            className={`about-sidebar fade-up${inView ? ' in-view' : ''}`}
+            style={{ '--delay': '0.20s', display: 'flex', flexDirection: 'column', gap: '14px' }}
+          >
+
+            {/* Core values */}
+            <div className="about-sidebar-card">
+              <div className="about-card-label">Core values</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px' }}>
+                {VALUES.map(v => (
+                  <div key={v.label} className="about-value-pill">
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: v.color, flexShrink: 0 }} />
+                    {v.label}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Language bars */}
+            <div className="about-sidebar-card">
+              <div className="about-card-label">Languages</div>
+              {LANGUAGES.map((l, i) => (
+                <div
+                  key={l.name}
+                  style={{ display: 'flex', alignItems: 'center', marginBottom: i < LANGUAGES.length - 1 ? '11px' : 0 }}
+                >
+                  <span style={{ fontSize: '13px', fontWeight: 500, color: 'var(--color-text-primary)', width: '60px', flexShrink: 0 }}>
+                    {l.name}
+                  </span>
+                  <div className="about-lang-bar-track">
+                    <div
+                      className="about-lang-bar-fill"
+                      style={{ width: `${l.pct}%`, '--delay': `${0.4 + i * 0.1}s` }}
+                    />
+                  </div>
+                  <span style={{ fontSize: '11px', color: 'var(--color-text-muted)', minWidth: '42px', textAlign: 'right' }}>
+                    {l.level}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </Container>
-      <svg
-        className="position-absolute bottom-0 start-0 w-100"
-        viewBox="0 0 1440 400"
-        preserveAspectRatio="none"
-        style={{ height: '100px', transform: 'scaleY(-1)' }}
-      >
+
+      {/* Wave divider */}
+      <svg className="wave-divider" viewBox="0 0 1440 80" preserveAspectRatio="none">
         <path
-          fill={darkMode ? 'hsl(220, 13%, 10%)' : 'hsl(210, 17%, 98%)'}
-          d="M0,96L48,106.7C96,117,192,139,288,149.3C384,160,480,160,576,144C672,128,768,96,864,80C960,64,1056,64,1152,85.3C1248,107,1344,149,1392,170.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-        ></path>
+          style={{ fill: 'var(--color-bg-secondary)' }}
+          d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
+        />
       </svg>
     </div>
   );

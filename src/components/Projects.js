@@ -1,129 +1,136 @@
-import React, { useContext } from 'react';
-import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { ThemeContext } from '../contexts/ThemeContext';
-import pdfhome from '../assets/PdfHome.png';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { FaGithub, FaFileAlt } from 'react-icons/fa';
+import { useInView } from '../hooks/useInView';
+import SectionHeader from './common/SectionHeader';
+import pdfhome    from '../assets/PdfHome.png';
 import devopshome from '../assets/DevOps-Home.png';
 
-const projects = [
+/* ─── Data ──────────────────────────────────────────────── */
+const PROJECTS = [
   {
-    title: "Jeu Concours",
-    description:
-      "A contest web platform for the tea company 'TheTipTio', featuring three user roles with separate dashboards. Includes a DevOps pipeline that automates the workflow using Docker and Jenkins.",
-    tech: ["React", "Bootstrap", "Node.js", "MongoDB", "Docker", "Jenkins"],
+    number: '01', tag: 'Full-Stack · DevOps',
+    title: 'Jeu Concours — TheTipTop',
+    desc: 'A contest web platform for the tea company TheTipTop, featuring three user roles with separate dashboards and a full DevOps pipeline from development to production.',
+    highlights: [
+      '3 user roles with separate dashboards',
+      'CI/CD automation with Docker & Jenkins',
+      'Live monitoring via Prometheus & Grafana',
+    ],
+    tech: ['React', 'Node.js', 'MongoDB', 'Docker', 'Jenkins', 'Bootstrap'],
     image: devopshome,
-    github: "https://github.com/YamaniYassine/DevOps",
-    demo: "/portfolio/TheTipTop-documentation.pdf"
+    github: 'https://github.com/YamaniYassine/DevOps',
+    demo: '/portfolio/TheTipTop-documentation.pdf',
+    imgBg: 'linear-gradient(135deg,#1a1a2e,#16213e)',
+    reverse: false,
   },
   {
-    title: "PDF Editor",
-    description:
-      "An online PDF editing tool allowing users to annotate, merge, delete pages, and compress PDFs with ease using TypeScript.",
-    tech: ["Next.js", "TailwindCSS", "Python", "PyMuPDF", "FastAPI"],
+    number: '02', tag: 'Web App · Python',
+    title: 'PDF Editor Web App',
+    desc: 'A browser-based PDF editing tool allowing users to annotate, merge, delete pages and compress PDFs in real-time, built with a Python backend and a TypeScript frontend.',
+    highlights: [
+      'Real-time annotation & page management',
+      'Merge, compress & export workflows',
+      'FastAPI backend with PyMuPDF processing',
+    ],
+    tech: ['Next.js', 'TypeScript', 'FastAPI', 'Python', 'PyMuPDF', 'TailwindCSS'],
     image: pdfhome,
-    github: "https://github.com/YamaniYassine/PDF-editor-web-app",
-    demo: "/portfolio/PDF-EDITOR-documentation.pdf"
+    github: 'https://github.com/YamaniYassine/PDF-editor-web-app',
+    demo: '/portfolio/PDF-EDITOR-documentation.pdf',
+    imgBg: 'linear-gradient(135deg,#0f2027,#203a43,#2c5364)',
+    reverse: true,
   },
 ];
 
+/* ─── Project card ──────────────────────────────────────── */
+const ProjectCard = ({ project, inView, delay }) => (
+  <div
+    className={`proj-card fade-up${inView ? ' in-view' : ''}`}
+    style={{ '--delay': `${delay}s`, direction: project.reverse ? 'rtl' : 'ltr' }}
+  >
+    {/* Image side */}
+    <div className="proj-img-side" style={{ background: project.imgBg }}>
+      <img src={project.image} alt={project.title} />
+      <span className="proj-badge-num">Project {project.number}</span>
+      <span className="proj-badge-type">{project.tag}</span>
+    </div>
+
+    {/* Content side */}
+    <div className="proj-content-side">
+
+      <div className="proj-featured-label">
+        <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#185FA5', display: 'inline-block' }} />
+        Featured project
+      </div>
+
+      <h3 className="proj-title">{project.title}</h3>
+      <p className="proj-desc">{project.desc}</p>
+
+      {/* Key highlights */}
+      <div style={{ marginBottom: '20px' }}>
+        <div className="proj-highlights-label">Key highlights</div>
+        {project.highlights.map((h, i) => (
+          <div key={i} className="proj-highlight-item">
+            <div className="proj-highlight-check">✓</div>
+            {h}
+          </div>
+        ))}
+      </div>
+
+      {/* Tech chips */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '24px' }}>
+        {project.tech.map(t => (
+          <span key={t} className="proj-tech-chip">{t}</span>
+        ))}
+      </div>
+
+      {/* Buttons */}
+      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+        <a href={project.github} target="_blank" rel="noopener noreferrer" className="proj-btn-primary">
+          <FaGithub style={{ fontSize: '14px' }} /> GitHub
+        </a>
+        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="proj-btn-secondary">
+          <FaFileAlt style={{ fontSize: '13px' }} /> Documentation
+        </a>
+      </div>
+    </div>
+  </div>
+);
+
+/* ─── Main component ────────────────────────────────────── */
 const Projects = () => {
-  const { darkMode } = useContext(ThemeContext);
+  const [sectionRef, inView] = useInView();
+
   return (
     <div
-      className={`${darkMode ? 'bg-dark-2' : 'bg-white'} py-5 section`}
-      style={{ minHeight: '100vh' }}
+      ref={sectionRef}
+      className="portfolio-section projects-section section"
       id="projects"
     >
-      <Container  className="vh-100">
-        <Row
-          className="vh-10 d-flex align-items-center justify-content-center"
-          style={{ height: '10%' }}
-        >
-          <Col xs="auto">
-            <h2 className="text-center display-4 fw-bold m-0">Projects</h2>
-          </Col>
-        </Row>
-        <Row xs={1} sm={1} md={2} lg={2} className="g-5 justify-content-center" style={{marginTop: '1%'}}>
-          {projects.map((project, idx) => (
-            <Col className="d-flex" key={idx}>
-              <Card
-                className={`project-card ${
-                  darkMode ? 'bg-dark-1 text-light' : 'light-mode-card'
-                } shadow`}
-              >
-                <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                  <Card.Img
-                    variant="top"
-                    src={project.image}
-                    className="project-img"
-                    alt={project.title}
-                  />
-                </a>
-                <Card.Body className="d-flex flex-column">
-                  <Card.Title className="fw-bold text-center mb-3">{project.title}</Card.Title>
-                  <Card.Text className="text-center">{project.description}</Card.Text>
-                  <div className="text-center mb-4">
-                    {project.tech.map((tech, i) => (
-                      <Badge
-                        key={i}
-                        bg={darkMode ? 'light' : 'dark'}
-                        className={`tech-badge ${darkMode ? 'text-dark' : ''}`}
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="mt-auto text-center">
-                    <Button
-                      variant={darkMode ? 'outline-light' : 'outline-dark'}
-                      size="sm"
-                      href={project.github}
-                      target="_blank"
-                      className="me-2"
-                    >
-                      <FaGithub className="me-1" /> GitHub
-                    </Button>
-                    <Button
-                      variant="outline-success"
-                      size="sm"
-                      href={project.demo}
-                      target="_blank"
-                    >
-                      <FaExternalLinkAlt className="me-1" /> Documentation
-                    </Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+      <Container>
+        <SectionHeader
+          eyebrow="Projects"
+          title="Selected work"
+          subtitle="Production projects I've designed, built and shipped end-to-end."
+          inView={inView}
+        />
+
+        {PROJECTS.map((project, i) => (
+          <ProjectCard
+            key={project.number}
+            project={project}
+            inView={inView}
+            delay={0.21 + i * 0.12}
+          />
+        ))}
       </Container>
 
-      <style jsx>{`
-        .project-card {
-          backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 15px;
-          overflow: hidden;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0px 4px 4px #00000030, 0px 12px 12px #00000015;}
-        }
-
-        .project-img {
-          width: 100%;
-          height: 250px;
-          object-fit: cover;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .tech-badge {
-          margin: 0 5px 5px 0;
-        }
-      `}</style>
+      {/* Wave divider */}
+      <svg className="wave-divider" viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path
+          style={{ fill: 'var(--color-bg-secondary)' }}
+          d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" />
+      </svg>
     </div>
   );
 };

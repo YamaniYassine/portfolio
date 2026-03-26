@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+
+const SOCIALS = [
+  { href: 'https://github.com/YamaniYassine',            icon: FaGithub,   title: 'GitHub'   },
+  { href: 'https://www.linkedin.com/in/yamani-yassine/', icon: FaLinkedin, title: 'LinkedIn' },
+  { href: 'mailto:yamani.yassine.dev@gmail.com',         icon: FaEnvelope, title: 'Email'    },
+];
 
 const Footer = () => {
   const [showConsent, setShowConsent] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-      setShowConsent(true);
-    }
+    if (!localStorage.getItem('cookieConsent')) setShowConsent(true);
   }, []);
 
   const handleConsent = (accepted) => {
@@ -17,22 +20,45 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-dark-1 text-white text-center py-2" style={{ borderTop: '1px solid #6a6a6a' }}>
-      <Container>
-        <div className="d-flex flex-wrap justify-content-center align-items-center gap-2 small">
-          <p className="mb-0">© {new Date().getFullYear()} <strong>Yamani Yassine</strong> All rights reserved.</p>
-          
-          {showConsent && (
-            <><div className="d-flex flex-wrap align-items-center gap-2">
-              <p className="mb-0 text-white-muted">This website uses cookies to improve the user experience.</p>
-            </div>
-            <div className="d-flex flex-wrap align-items-center gap-2">
-              <Button variant="outline-light" size="sm" onClick={() => handleConsent(true)}>Accept</Button>
-              <Button variant="outline-light" size="sm" onClick={() => handleConsent(false)}>Decline</Button>
-            </div></>
-          )}
+    <footer className="footer-root">
+
+      {/* Cookie consent */}
+      {showConsent && (
+        <div className="footer-consent">
+          <p className="footer-consent-text">
+            This site uses cookies to improve your experience.
+          </p>
+          <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
+            <button className="footer-btn-accept"  onClick={() => handleConsent(true)}>Accept</button>
+            <button className="footer-btn-decline" onClick={() => handleConsent(false)}>Decline</button>
+          </div>
         </div>
-      </Container>
+      )}
+
+      {/* Main row */}
+      <div className="footer-main">
+
+        {/* Copyright */}
+        <p className="footer-copy">
+          © {new Date().getFullYear()} <span>Yamani Yassine</span> — All rights reserved.
+        </p>
+
+        {/* Social icons */}
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          {SOCIALS.map(({ href, icon: Icon, title }) => (
+            <a
+              key={title}
+              href={href}
+              target={href.startsWith('mailto') ? undefined : '_blank'}
+              rel="noopener noreferrer"
+              className="footer-social"
+              title={title}
+            >
+              <Icon />
+            </a>
+          ))}
+        </div>
+      </div>
     </footer>
   );
 };

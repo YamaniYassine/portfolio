@@ -2,16 +2,21 @@ import React, { useContext } from 'react';
 import './CustomToggleSwitch.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { FaMoon } from 'react-icons/fa';
-import { FiSun } from "react-icons/fi";
+import { FiSun } from 'react-icons/fi';
 
 const CustomToggleSwitch = () => {
   const { darkMode, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div className="theme-switch-wrapper d-flex align-items-center ms-md-3">
-      <div className={`theme-switch ${darkMode ? 'active' : ''}`} onClick={toggleTheme}>
-        <div className="switch-handle d-flex justify-content-center align-items-center">
-          {darkMode ? <FiSun size={18} color="#2f3336"/> : <FaMoon size={16} color="#fff" />}
+    <div className="ts-wrapper" onClick={toggleTheme} title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+      <div className={`ts-track ${darkMode ? 'dark' : 'light'}`}>
+        <div className="ts-thumb">
+          <span className="ts-icon">
+            {darkMode
+              ? <FiSun size={11} color="#185FA5" />
+              : <FaMoon size={10} color="#94a3b8" />
+            }
+          </span>
         </div>
       </div>
     </div>

@@ -1,0 +1,132 @@
+/* ── Skills ─────────────────────────────────────────── */
+.skills-section {
+    background: var(--color-bg-secondary);
+  }
+  
+  /* Tab layout container */
+  .sk-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    border: 0.5px solid var(--color-border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  
+  /* Left nav */
+  .sk-nav {
+    background: var(--color-bg-surface);
+    border-right: 0.5px solid var(--color-border);
+  }
+  .sk-nav-item {
+    padding: 13px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border-bottom: 0.5px solid var(--color-border);
+    transition: background .15s ease;
+  }
+  .sk-nav-item:last-child { border-bottom: none; }
+  .sk-nav-item:hover      { background: var(--color-chip-bg); }
+  .sk-nav-item.active {
+    background: var(--color-bg-primary);
+    border-right: 2px solid var(--color-blue-dark);
+    margin-right: -1px;
+  }
+  .sk-nav-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: color .15s;
+  }
+  .sk-nav-item.active .sk-nav-label {
+    color: var(--color-blue-dark);
+    font-weight: 700;
+  }
+  .sk-nav-count {
+    font-size: 10px;
+    color: var(--color-text-muted);
+    background: var(--color-chip-bg);
+    padding: 2px 7px;
+    border-radius: 99px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  
+  /* Right panel */
+  .sk-panel {
+    background: var(--color-bg-primary);
+    padding: 32px 28px;
+  }
+  .sk-panel-anim {
+    animation: panelFadeIn .22s ease both;
+  }
+  .sk-panel-header {
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 0.5px solid var(--color-border);
+  }
+  .sk-panel-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 6px;
+  }
+  .sk-panel-desc {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+  
+  /* Skill chips */
+  .sk-chip {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 0.5px solid var(--color-chip-border);
+    background: var(--color-chip-bg);
+    transition: all .18s ease;
+    cursor: default;
+  }
+  .sk-chip:hover {
+    border-color: var(--color-blue-dark);
+    background: var(--color-blue-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(24,95,165,0.1);
+  }
+  .sk-chip-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-body);
+    transition: color .18s;
+  }
+  .sk-chip:hover .sk-chip-name {
+    color: var(--color-blue-dark);
+  }
+  
+  /* Responsive */
+  @media (max-width: 650px) {
+    .sk-layout {
+      grid-template-columns: 1fr !important;
+    }
+    .sk-nav {
+      border-right: none !important;
+      border-bottom: 0.5px solid var(--color-border) !important;
+      display: flex !important;
+      overflow-x: auto;
+    }
+    .sk-nav-item {
+      border-bottom: none !important;
+      border-right: 0.5px solid var(--color-border);
+      flex-shrink: 0;
+    }
+    .sk-nav-item.active {
+      border-right: 0.5px solid var(--color-border);
+      border-bottom: 2px solid var(--color-blue-dark) !important;
+      margin-right: 0 !important;
+      margin-bottom: -1px;
+    }
+  }

@@ -1,0 +1,52 @@
+/* ─────────────────────────────────────────────────────────
+   Shared entrance animations
+   Usage:
+     <div className={`fade-up${inView ? ' in-view' : ''}`}
+          style={{ '--delay': '0.14s' }}>
+   The --delay CSS custom property sets the stagger offset.
+   Without it the transition fires at 0s (no stagger).
+───────────────────────────────────────────────────────── */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity  .45s ease var(--delay, 0s),
+      transform .45s ease var(--delay, 0s);
+  }
+  
+  .fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* ─── Keyframes used directly by Hero (not scroll-triggered) ── */
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+  
+  @keyframes heroPulse {
+    0%,100% { transform: scale(1);   opacity: 1;  }
+    50%     { transform: scale(1.5); opacity: .6; }
+  }
+  
+  @keyframes heroBlink {
+    0%,100% { opacity: 1; }
+    50%     { opacity: 0; }
+  }
+  
+  @keyframes heroBounce {
+    0%,100% { transform: translateY(0);  }
+    50%     { transform: translateY(5px);}
+  }
+  
+  @keyframes panelFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0);   }
+  }
+  
+  @keyframes mobileSlideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }

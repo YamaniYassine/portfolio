@@ -1,0 +1,92 @@
+/* ─────────────────────────────────────────────────────────
+   Design token variables
+   Defined on body.light-mode and body.dark-mode which are
+   already applied by ThemeContext.js — no extra setup needed.
+   Usage in any component: var(--color-bg-primary) etc.
+───────────────────────────────────────────────────────── */
+
+body.light-mode {
+    /* Backgrounds */
+    --color-bg-primary:    #ffffff;
+    --color-bg-secondary:  #f8fafc;
+    --color-bg-surface:    #f0f4f8;
+    --color-bg-dark:       #1a1a2e;
+  
+    /* Text */
+    --color-text-primary:  #1a1a2e;
+    --color-text-body:     #555555;
+    --color-text-muted:    #888888;
+    --color-text-faint:    #aaaaaa;
+  
+    /* Border */
+    --color-border:        rgba(0, 0, 0, 0.08);
+    --color-border-strong: rgba(0, 0, 0, 0.15);
+  
+    /* Accent — blue */
+    --color-blue:          #378ADD;
+    --color-blue-dark:     #185FA5;
+    --color-blue-bg:       #E6F1FB;
+    --color-blue-bg-hover: #d0e8f8;
+  
+    /* Accent — green */
+    --color-green:         #639922;
+    --color-green-bg:      #EAF3DE;
+    --color-green-dark:    #3B6D11;
+  
+    /* Chip / pill */
+    --color-chip-bg:       #fafafa;
+    --color-chip-border:   rgba(0, 0, 0, 0.09);
+  
+    /* Nav */
+    --color-nav-bg:        rgba(255, 255, 255, 0.85);
+    --color-nav-border:    rgba(0, 0, 0, 0.07);
+    --color-nav-link:      #555555;
+    --color-nav-mobile-bg: #ffffff;
+  
+    /* Dark CTA card (contact email banner) */
+    --color-cta-bg:        #1a1a2e;
+    --color-cta-body:      rgba(255, 255, 255, 0.65);
+  }
+  
+  body.dark-mode {
+    /* Backgrounds */
+    --color-bg-primary:    hsl(220, 13%, 10%);
+    --color-bg-secondary:  hsl(220, 17%, 18%);
+    --color-bg-surface:    hsl(220, 13%, 13%);
+    --color-bg-dark:       hsl(220, 13%, 14%);
+  
+    /* Text */
+    --color-text-primary:  #e4e8f0;
+    --color-text-body:     #9aa3b0;
+    --color-text-muted:    #6b7585;
+    --color-text-faint:    #4a5568;
+  
+    /* Border */
+    --color-border:        rgba(255, 255, 255, 0.08);
+    --color-border-strong: rgba(255, 255, 255, 0.18);
+  
+    /* Accent — blue */
+    --color-blue:          #378ADD;
+    --color-blue-dark:     #185FA5;
+    --color-blue-bg:       rgba(55, 138, 221, 0.15);
+    --color-blue-bg-hover: rgba(55, 138, 221, 0.22);
+  
+    /* Accent — green */
+    --color-green:         #5DCAA5;
+    --color-green-bg:      rgba(29, 158, 117, 0.18);
+    --color-green-dark:    #5DCAA5;
+  
+    /* Chip / pill */
+    --color-chip-bg:       hsl(220, 13%, 16%);
+    --color-chip-border:   rgba(255, 255, 255, 0.09);
+  
+    /* Nav */
+    --color-nav-bg:        rgba(16, 20, 28, 0.88);
+    --color-nav-border:    rgba(255, 255, 255, 0.07);
+    --color-nav-link:      #9aa3b0;
+    --color-nav-mobile-bg: hsl(220, 13%, 11%);
+  
+    /* Dark CTA card */
+    --color-cta-bg:        hsl(220, 13%, 14%);
+    --color-cta-body:      rgba(255, 255, 255, 0.45);
+  }
