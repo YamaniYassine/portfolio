@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.df71beaf.css",
-    "main.js": "/portfolio/static/js/main.e71d1dc9.js",
+    "main.css": "/portfolio/static/css/main.88f60e94.css",
+    "main.js": "/portfolio/static/js/main.6e13f08c.js",
     "static/media/DevOps-Home.png": "/portfolio/static/media/DevOps-Home.a47c9dfaaea68dcc231b.png",
     "static/media/PdfHome.png": "/portfolio/static/media/PdfHome.fe60eefc88d738c8a529.png",
     "static/media/Portrait3.png": "/portfolio/static/media/Portrait3.2e7772d6bb8473328280.png",
+    "static/media/HealthHR-Chart.png": "/portfolio/static/media/HealthHR-Chart.3a064eff4ecbdeb749f7.png",
+    "static/media/liora-io.svg": "/portfolio/static/media/liora-io.99093e37e83c6ff81ab2367d0de36beb.svg",
     "index.html": "/portfolio/index.html",
-    "main.df71beaf.css.map": "/portfolio/static/css/main.df71beaf.css.map",
-    "main.e71d1dc9.js.map": "/portfolio/static/js/main.e71d1dc9.js.map"
+    "main.88f60e94.css.map": "/portfolio/static/css/main.88f60e94.css.map",
+    "main.6e13f08c.js.map": "/portfolio/static/js/main.6e13f08c.js.map"
   },
   "entrypoints": [
-    "static/css/main.df71beaf.css",
-    "static/js/main.e71d1dc9.js"
+    "static/css/main.88f60e94.css",
+    "static/js/main.6e13f08c.js"
   ]
 }
