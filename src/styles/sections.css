@@ -25,9 +25,9 @@
     gap: 7px;
     background: var(--color-blue-bg);
     color: var(--color-blue-dark);
-    font-size: 11px;
+    font-size: 12.5px;
     font-weight: 600;
-    padding: 4px 13px;
+    padding: 5px 14px;
     border-radius: 99px;
     letter-spacing: .04em;
   }
@@ -53,8 +53,8 @@
   
   /* Section subtitle */
   .section-subtitle {
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 16.5px;
+    line-height: 1.75;
     color: var(--color-text-body);
     margin-bottom: 0;
   }

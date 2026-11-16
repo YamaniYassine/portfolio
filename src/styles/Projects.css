@@ -33,11 +33,6 @@
     object-fit: cover;
     object-position: top;
     display: block;
-    opacity: .85;
-    transition: opacity .25s ease;
-  }
-  .proj-img-side:hover img {
-    opacity: 1;
   }
   /* Chart screenshots: show the whole figure instead of cropping it */
   .proj-img-side--contain {
@@ -49,8 +44,11 @@
   .proj-img-side--contain img {
     height: auto;
     object-fit: contain;
-    opacity: 1;
+    border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    transition: transform .3s ease;
   }
+  .proj-card:hover .proj-img-side--contain img { transform: scale(1.02); }
   .proj-diagram {
     width: 100%;
     height: 100%;
@@ -112,7 +110,7 @@
     line-height: 1.2;
   }
   .proj-context {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     color: var(--color-blue);
     margin: -6px 0 12px;
@@ -160,8 +158,8 @@
   .proj-filter:focus-visible { outline: 2px solid var(--color-blue); outline-offset: 2px; }
 
   .proj-desc {
-    font-size: 13px;
-    line-height: 1.8;
+    font-size: 14.5px;
+    line-height: 1.75;
     color: var(--color-text-body);
     margin-bottom: 20px;
   }
@@ -180,7 +178,7 @@
     align-items: flex-start;
     gap: 8px;
     margin-bottom: 6px;
-    font-size: 12px;
+    font-size: 13.5px;
     color: var(--color-text-body);
     line-height: 1.55;
   }
@@ -201,8 +199,8 @@
   
   /* Tech chips */
   .proj-tech-chip {
-    font-size: 11px;
-    padding: 3px 10px;
+    font-size: 12px;
+    padding: 4px 11px;
     border-radius: 6px;
     background: var(--color-chip-bg);
     color: var(--color-text-body);

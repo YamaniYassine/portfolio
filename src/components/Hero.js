@@ -34,7 +34,7 @@ const Hero = () => {
       <div className="hero-dot-grid" />
 
       <Container style={{ position: 'relative', zIndex: 1 }}>
-        <Row className="align-items-center justify-content-center g-5">
+        <Row className="align-items-center justify-content-center gx-4 gy-5">
 
           {/* ── LEFT: text ── */}
           <Col xs={12} md={7}>
@@ -120,7 +120,7 @@ const Hero = () => {
           <Col xs={10} sm={7} md={5} className="hero-aside d-flex flex-column align-items-center gap-4">
 
             {/* Photo with rotating SVG ring */}
-            <div style={{ position: 'relative', width: '200px', height: '200px' }}>
+            <div style={{ position: 'relative', width: '250px', height: '250px' }}>
               <svg
                 style={{ position: 'absolute', inset: '-10px', width: 'calc(100% + 20px)', height: 'calc(100% + 20px)', overflow: 'visible' }}
                 viewBox="0 0 220 220"
@@ -142,7 +142,7 @@ const Hero = () => {
                 roundedCircle
                 alt="Yamani Yassine"
                 style={{
-                  width: '200px', height: '200px',
+                  width: '250px', height: '250px',
                   objectFit: 'cover',
                   backgroundColor: '#DEECF8',
                   border: '3px solid var(--color-blue-bg-hover)',
@@ -152,7 +152,7 @@ const Hero = () => {
             </div>
 
             {/* Stat cards */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', width: '100%', maxWidth: '250px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', width: '100%', maxWidth: '310px' }}>
               {STATS.map(s => (
                 <div key={s.label} className="hero-stat">
                   <div className="hero-stat-number">{s.number}</div>

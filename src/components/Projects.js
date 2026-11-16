@@ -28,7 +28,7 @@ const PROJECTS = [
     links: [
       { kind: 'doc', label: 'Report (part 1)', href: DOC('HealthHR-Data-documentation.pdf') },
     ],
-    imgBg: '#ffffff',
+    imgBg: 'linear-gradient(135deg,#e6eef7,#f4f7fb)',
   },
   {
     number: '02', category: 'data', tag: 'Analytics Engineering', status: 'In progress',
@@ -56,6 +56,7 @@ const PROJECTS = [
     ],
     tech: ['React', 'Node.js', 'MongoDB', 'Docker', 'Jenkins', 'Bootstrap'],
     image: devopshome,
+    imageFit: 'contain',
     links: [
       { kind: 'github', label: 'GitHub',        href: 'https://github.com/YamaniYassine/DevOps' },
       { kind: 'doc',    label: 'Documentation', href: DOC('TheTipTop-documentation.pdf') },
@@ -73,6 +74,7 @@ const PROJECTS = [
     ],
     tech: ['Next.js', 'TypeScript', 'FastAPI', 'Python', 'PyMuPDF', 'TailwindCSS'],
     image: pdfhome,
+    imageFit: 'contain',
     links: [
       { kind: 'github', label: 'GitHub',        href: 'https://github.com/YamaniYassine/PDF-editor-web-app' },
       { kind: 'doc',    label: 'Documentation', href: DOC('PDF-EDITOR-documentation.pdf') },

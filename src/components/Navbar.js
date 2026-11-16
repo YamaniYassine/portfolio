@@ -63,13 +63,12 @@ const Header = () => {
     }}>
 
       {/* ── Main bar ── */}
-      <div style={{
-        maxWidth: '1200px', margin: '0 auto', padding: '0 24px',
-        height: '58px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      <div className="container" style={{
+        height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
 
         {/* Brand */}
-        <a href="#hero" style={{ fontSize: '15px', fontWeight: 700, letterSpacing: '-.02em',
+        <a href="#hero" style={{ fontSize: '19px', fontWeight: 700, letterSpacing: '-.02em',
           color: 'var(--color-text-primary)', textDecoration: 'none', transition: 'opacity .15s' }}
           onMouseEnter={e => { e.currentTarget.style.opacity = '.8'; }}
           onMouseLeave={e => { e.currentTarget.style.opacity = '1'; }}

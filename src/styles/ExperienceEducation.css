@@ -56,7 +56,7 @@ body.dark-mode .tl-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
   margin-bottom: 14px;
 }
 .tl-role {
-  font-size: 16px;
+  font-size: 17.5px;
   font-weight: 700;
   letter-spacing: -.01em;
   color: var(--color-text-primary);
@@ -64,7 +64,7 @@ body.dark-mode .tl-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
   line-height: 1.3;
 }
 .tl-org {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-primary);
   display: flex;
   flex-wrap: wrap;
@@ -97,7 +97,7 @@ body.dark-mode .tl-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
   padding-left: 18px;
 }
 .tl-points li {
-  font-size: 13px;
+  font-size: 14.5px;
   line-height: 1.7;
   color: var(--color-text-body);
   margin-bottom: 4px;

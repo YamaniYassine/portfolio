@@ -55,7 +55,7 @@ const Contact = () => {
             style={{ '--delay': '0.21s', display: 'flex', flexDirection: 'column', gap: '14px' }}
           >
             {/* Row 1 — GitHub + LinkedIn side by side */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: '14px' }}>
               <ContactCard
                 icon={FaGithub}
                 iconBg={darkMode ? 'rgba(255,255,255,0.1)' : '#f0f0f0'}

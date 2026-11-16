@@ -5,10 +5,11 @@
   
   .ct-two-col {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 60px;
     align-items: center;
   }
+  .ct-two-col > * { min-width: 0; }
   
   .ct-avail-indicator {
     display: inline-flex;
@@ -32,6 +33,7 @@
     border: 0.5px solid var(--color-border);
     border-radius: 14px;
     padding: 22px 24px;
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -85,6 +87,7 @@
     background: var(--color-cta-bg);
     border-radius: 14px;
     padding: 22px 24px;
+    min-width: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -126,7 +129,7 @@
   /* Responsive */
   @media (max-width: 767px) {
     .ct-two-col {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 10px;
       margin-bottom: 20px;
     }

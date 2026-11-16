@@ -6,6 +6,7 @@ import { FaPython } from 'react-icons/fa';
 import { useInView } from '../hooks/useInView';
 import SectionHeader from './common/SectionHeader';
 import OrgLogo from './common/OrgLogo';
+import lioraLogo from '../assets/logos/liora-io.svg';
 
 /*
  * Logos: each entry renders an icon or monogram tile by default.
@@ -21,7 +22,7 @@ const EDUCATION = [
     note: 'Mines Paris – PSL Executive Education certificate (in progress)',
     period: 'Oct – Dec 2026',
     current: true,
-    logo: { text: 'L', bg: '#3A1F8A' },
+    logo: { src: lioraLogo },
     topics: ['Python', 'NumPy', 'Pandas', 'Dataviz', 'Advanced SQL', 'Power BI (Power Query, DAX)', 'Snowflake', 'Make', 'Machine Learning (intro)'],
   },
   {
@@ -29,12 +30,14 @@ const EDUCATION = [
     school: 'École 42, Paris',
     period: '2025 – 2026',
     logo: { icon: Si42, bg: '#000000', color: '#ffffff' },
+    topics: ['C', 'Python', 'Systems & Network Administration', 'Algorithmics'],
   },
   {
     title: "Master's — Expert Web Architect",
     school: 'Digital School of Paris',
     period: '2023 – 2025',
     logo: { text: 'DSP', bg: '#185FA5' },
+    topics: ['Microservices architecture', 'Docker & Compose', 'CI/CD (Jenkins)', 'Nginx · SSL/TLS', 'Prometheus & Grafana', 'Testing (Jest, Puppeteer)'],
   },
 ];
 
