@@ -139,23 +139,6 @@
     border-top: 0.5px solid rgba(255,255,255,0.06);
   }
   
-  .footer-consent {
-    background: rgba(255,255,255,0.04);
-    border-bottom: 0.5px solid rgba(255,255,255,0.07);
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .footer-consent-text {
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
-    margin: 0;
-    line-height: 1.6;
-  }
-  
   .footer-main {
     max-width: 1200px;
     margin: 0 auto;
@@ -210,33 +193,4 @@
     border-color: rgba(255,255,255,0.35);
     transform: translateY(-2px);
     text-decoration: none;
-  }
-  
-  .footer-btn-accept {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 6px;
-    border: none;
-    background: var(--color-blue-dark);
-    color: #fff;
-    cursor: pointer;
-    transition: background .15s;
-  }
-  .footer-btn-accept:hover { background: #0C447C; }
-  
-  .footer-btn-decline {
-    font-size: 11px;
-    font-weight: 500;
-    padding: 6px 14px;
-    border-radius: 6px;
-    border: 0.5px solid rgba(255,255,255,0.12);
-    background: transparent;
-    color: rgba(255,255,255,0.45);
-    cursor: pointer;
-    transition: all .15s;
-  }
-  .footer-btn-decline:hover {
-    background: rgba(255,255,255,0.07);
-    color: rgba(255,255,255,0.7);
   }

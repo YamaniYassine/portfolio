@@ -4,17 +4,31 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16191f" />
     <meta
       name="description"
-      content="Welcome to my portfolio"
+      content="Yassine Yamani — Data Analyst & Full-Stack Software Engineer in Paris. Python, SQL, Power BI, dbt, Snowflake, React, Node.js. Projects, experience and CV."
     />
+    <meta property="og:title" content="Yassine Yamani — Data Analyst & Full-Stack Engineer" />
+    <meta property="og:description" content="From raw data to dashboards and production apps: Python, SQL, Power BI, dbt, Snowflake, React, Node.js." />
+    <meta property="og:type" content="website" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Yamani's Portfolio</title>
+    <title>Yassine Yamani — Data Analyst & Full-Stack Engineer</title>
   </head>
   <body>
-    <noscript>.</noscript>
+    <script>
+      /* Apply the theme before React mounts to avoid a light/dark flash */
+      (function () {
+        var pref = null;
+        try { pref = localStorage.getItem('theme-pref'); } catch (e) {}
+        var dark = pref === 'dark' || (pref !== 'light' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.body.className = dark ? 'dark-mode' : 'light-mode';
+      })();
+    </script>
+    <noscript>You need to enable JavaScript to view this portfolio.</noscript>
     <div id="root"></div>
   </body>
 </html>

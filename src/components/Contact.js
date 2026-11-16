@@ -44,7 +44,7 @@ const Contact = () => {
             <SectionHeader
               eyebrow="Contact"
               title={<>Let's work<br />together</>}
-              subtitle="I'm available for full-time roles and freelance projects. Whether you have a question, a proposal or just want to say hi — my inbox is always open."
+              subtitle="I'm looking for a Data Analyst / BI Analyst role, and I'm still available for full-stack freelance work through Devtra. Whether you have a question, a proposal or just want to say hi — my inbox is always open."
               inView={inView}
             />
           </div>

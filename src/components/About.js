@@ -6,18 +6,18 @@ import SectionHeader from './common/SectionHeader';
 /* ─── Data ──────────────────────────────────────────────── */
 
 const VALUES = [
-  { label: 'Clean code',  color: '#185FA5' },
-  { label: 'TDD',         color: '#3B6D11' },
-  { label: 'Agile/Scrum', color: '#993C1D' },
-  { label: 'CI/CD',       color: '#534AB7' },
-  { label: 'Monitoring',  color: '#085041' },
-  { label: 'Security',    color: '#854F0B' },
+  { label: 'Data quality',   color: '#185FA5' },
+  { label: 'Reproducible',   color: '#3B6D11' },
+  { label: 'Storytelling',   color: '#993C1D' },
+  { label: 'Clean code',     color: '#534AB7' },
+  { label: 'Agile/Scrum',    color: '#085041' },
+  { label: 'CI/CD',          color: '#854F0B' },
 ];
 
 const LANGUAGES = [
   { name: 'Arabic',  level: 'Native', pct: 100 },
   { name: 'French',  level: 'Fluent', pct: 95  },
-  { name: 'English', level: 'Fluent', pct: 85  },
+  { name: 'English', level: 'Advanced', pct: 85 },
 ];
 
 /* ─── Component ─────────────────────────────────────────── */
@@ -34,8 +34,8 @@ const About = () => {
 
         <SectionHeader
           eyebrow="About me"
-          title={<>Turning ideas into<br />production-ready apps</>}
-          subtitle="1+ years building full-stack applications — from clean UIs to scalable backends with DevOps pipelines baked in."
+          title={<>From raw data<br />to clear decisions</>}
+          subtitle="A dual Dev & Data profile: I build the pipelines, the analyses and the dashboards — with production-grade engineering practices."
           inView={inView}
         />
 
@@ -50,27 +50,29 @@ const About = () => {
             <div style={{ marginBottom: '14px' }}>
               <div className="about-story-label">Who I am</div>
               <p className="about-story-text">
-                I'm a software engineer passionate about designing and delivering high-quality,
-                user-focused web applications. I specialize in full-stack development across
-                JavaScript and Java ecosystems — React, Angular, Node.js, Spring Boot, FastAPI.
+                I'm a data analyst with a full-stack engineering background. After building web
+                apps at Carrefour and for clients through my own company, Devtra, I trained as a
+                Data Analyst with Liora (Mines Paris – PSL certificate track) to work where I enjoy
+                it most: turning messy data into findings a decision-maker can act on.
               </p>
             </div>
 
             <div style={{ marginBottom: '14px' }}>
               <div className="about-story-label">What I build</div>
               <p className="about-story-text">
-                I've led projects from conception to production — from a full MERN contest platform
-                with CI/CD pipelines and live monitoring, to a browser-based PDF editor supporting
-                real-time annotation, merging and compression built with FastAPI and Next.js.
+                End-to-end data work — collecting multi-source public data, cleaning it with Pandas,
+                modelling it in SQL and a dbt / Snowflake star schema, then telling the story in
+                Power BI. On the dev side: full-stack apps (React, Angular, Node.js, FastAPI) with
+                CI/CD, from a contest platform to a financial-tracking app with KPI dashboards.
               </p>
             </div>
 
             <div style={{ marginBottom: '14px' }}>
               <div className="about-story-label">How I work</div>
               <p className="about-story-text">
-                I value clean communication, teamwork and Agile practices. I integrate testing
-                (Jest, TDD), monitoring (Prometheus, Grafana) and code quality tools (SonarQube)
-                into every workflow to ship reliable, maintainable software.
+                I treat analyses like software: versioned in Git, every cleaning step documented
+                and justified, quality checks before and after, and never a missing value silently
+                turned into a zero. 20+ Agile sprints taught me to deliver in small, reviewable steps.
               </p>
             </div>
 
@@ -82,7 +84,8 @@ const About = () => {
               <div>
                 <div className="about-exploring-label">Currently exploring</div>
                 <div className="about-exploring-text">
-                  Cloud deployment, system design, and application security.
+                  Google Cloud Data Analytics and Microsoft PL-300 (Power BI) certifications,
+                  and industrialising my healthcare HR project into a dbt / Snowflake data mart.
                 </div>
               </div>
             </div>

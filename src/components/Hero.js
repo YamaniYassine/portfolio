@@ -7,19 +7,20 @@ import { useTypingEffect } from '../hooks/useTypingEffect';
 
 /* ─── Data ──────────────────────────────────────────────── */
 const ROLES = [
+  'Data Analyst',
   'Full-Stack Software Engineer',
-  'React & Node.js Developer',
-  'Angular & Spring Boot Developer',
+  'Analytics Engineer — dbt & Snowflake',
+  'Python · SQL · Power BI',
 ];
 
 const STATS = [
-  { number: '1+', label: 'Years exp.'   },
-  { number: '3+', label: 'Projects'     },
-  { number: '10+', label: 'Technologies' },
-  { number: '4',  label: 'Frameworks'   },
+  { number: '1+',  label: 'Yrs experience'       },
+  { number: '20+', label: 'Agile sprints'        },
+  { number: '6',   label: 'Public datasets'      },
+  { number: '4',   label: 'Featured projects'    },
 ];
 
-const PILLS = ['React', 'Node.js', 'Angular', 'Spring Boot', 'FastAPI'];
+const PILLS = ['Python', 'SQL', 'Power BI', 'dbt', 'Snowflake', 'React', 'Node.js'];
 
 /* ─── Component ─────────────────────────────────────────── */
 const Hero = () => {
@@ -42,7 +43,7 @@ const Hero = () => {
             <div className="mb-3 hr1">
               <span className="hero-avail">
                 <span className="hero-avail-dot" />
-                Open for collaboration
+                Open to Data Analyst / BI roles
               </span>
             </div>
 
@@ -62,8 +63,9 @@ const Hero = () => {
             {/* 4 — Pitch */}
             <div className="hr4">
               <p className="hero-desc">
-                I build scalable web applications from concept to production — React,
-                Node.js, Angular and Spring Boot with full CI/CD pipelines.
+                Full-stack engineer turned data analyst. I cover the whole data chain —
+                API collection, SQL modelling, Python cleaning and Power BI dashboards —
+                with the engineering habits (Git, tests, CI) that make analyses reproducible.
               </p>
             </div>
 

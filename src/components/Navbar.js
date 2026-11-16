@@ -6,6 +6,8 @@ const NAV_LINKS = [
   { href: '#about',    label: 'About'    },
   { href: '#skills',   label: 'Skills'   },
   { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#education', label: 'Education' },
   { href: '#contact',  label: 'Contact'  },
 ];
 
@@ -24,14 +26,14 @@ const Header = () => {
 
   /* Close mobile menu on resize */
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth >= 768) setMenuOpen(false); };
+    const onResize = () => { if (window.innerWidth >= 992) setMenuOpen(false); };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
   /* Active section via IntersectionObserver */
   useEffect(() => {
-    const ids = ['hero', 'about', 'skills', 'projects', 'contact'];
+    const ids = ['hero', ...NAV_LINKS.map(l => l.href.slice(1))];
     const obs = new IntersectionObserver(
       (entries) => entries.forEach(e => { if (e.isIntersecting) setActiveSection(e.target.id); }),
       { rootMargin: '-40% 0px -55% 0px' }
@@ -76,7 +78,7 @@ const Header = () => {
         </a>
 
         {/* Desktop links */}
-        <div className="d-none d-md-flex align-items-center" style={{ gap: '2px' }}>
+        <div className="d-none d-lg-flex align-items-center" style={{ gap: '2px' }}>
           {NAV_LINKS.map(({ href, label }) => (
             <a
               key={href}
@@ -92,9 +94,13 @@ const Header = () => {
         <div className="d-flex align-items-center" style={{ gap: '12px' }}>
           <CustomToggleSwitch />
           <div
-            className={`nb-burger d-md-none${menuOpen ? ' open' : ''}`}
+            className={`nb-burger d-lg-none${menuOpen ? ' open' : ''}`}
             onClick={() => setMenuOpen(o => !o)}
             aria-label="Toggle menu"
+            role="button"
+            tabIndex={0}
+            aria-expanded={menuOpen}
+            onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setMenuOpen(o => !o); } }}
           >
             <span /><span /><span />
           </div>
@@ -103,7 +109,7 @@ const Header = () => {
 
       {/* ── Mobile dropdown ── */}
       {menuOpen && (
-        <div className="nb-mobile d-md-none">
+        <div className="nb-mobile d-lg-none">
           {NAV_LINKS.map(({ href, label }) => (
             <a
               key={href}

@@ -9,6 +9,8 @@ import Contact from './components/Contact';
 import Header from './components/Navbar';
 import Footer from './components/Footer';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Education from './components/Education';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Experience />
+      <Education />
       <Contact />
       <ScrollToTop />
       <Footer />

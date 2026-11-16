@@ -3,6 +3,14 @@
   align-items: center;
   cursor: pointer;
   user-select: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  border-radius: 99px;
+}
+.ts-wrapper:focus-visible {
+  outline: 2px solid #378ADD;
+  outline-offset: 3px;
 }
 
 /* Track */

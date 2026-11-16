@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const SOCIALS = [
@@ -8,32 +8,8 @@ const SOCIALS = [
 ];
 
 const Footer = () => {
-  const [showConsent, setShowConsent] = useState(false);
-
-  useEffect(() => {
-    if (!localStorage.getItem('cookieConsent')) setShowConsent(true);
-  }, []);
-
-  const handleConsent = (accepted) => {
-    localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'declined');
-    setShowConsent(false);
-  };
-
   return (
     <footer className="footer-root">
-
-      {/* Cookie consent */}
-      {showConsent && (
-        <div className="footer-consent">
-          <p className="footer-consent-text">
-            This site uses cookies to improve your experience.
-          </p>
-          <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
-            <button className="footer-btn-accept"  onClick={() => handleConsent(true)}>Accept</button>
-            <button className="footer-btn-decline" onClick={() => handleConsent(false)}>Decline</button>
-          </div>
-        </div>
-      )}
 
       {/* Main row */}
       <div className="footer-main">

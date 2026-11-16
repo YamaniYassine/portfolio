@@ -12,13 +12,53 @@ import {
   SiBootstrap, SiJenkins, SiJest, SiSonarqube, SiSpringboot,
   SiFigma, SiFastapi,
   SiPrometheus, SiGrafana,
+  SiPandas, SiNumpy, SiPlotly, SiSnowflake, SiDbt, SiLooker, SiMake,
+  SiGooglecolab, SiJira, SiGitlab, SiGithubactions, SiChartdotjs,
 } from 'react-icons/si';
+import { TbSql, TbChartBar, TbChartDots, TbMathFunction, TbFilter, TbSchema, TbTransform, TbApi } from 'react-icons/tb';
 
 /* ─── Data ──────────────────────────────────────────────── */
 const CATEGORIES = [
   {
+    label: 'Data Analysis', symbol: '∑', iconBg: '#E1F5EE', iconColor: '#0F6E56',
+    desc: 'Exploring, cleaning and describing data: from raw CSVs to reliable, documented tables.',
+    skills: [
+      { name: 'Python',          icon: FaPython,       bg: '#3776AB', color: '#fff'    },
+      { name: 'Pandas',          icon: SiPandas,       bg: '#150458', color: '#fff'    },
+      { name: 'NumPy',           icon: SiNumpy,        bg: '#4DABCF', color: '#fff'    },
+      { name: 'Advanced SQL',    icon: TbSql,          bg: '#00758F', color: '#fff'    },
+      { name: 'Data cleaning',   icon: TbFilter,       bg: '#0F6E56', color: '#fff'    },
+      { name: 'EDA & stats',     icon: TbMathFunction, bg: '#534AB7', color: '#fff'    },
+      { name: 'Jupyter / Colab', icon: SiGooglecolab,  bg: '#F9AB00', color: '#333'    },
+    ],
+  },
+  {
+    label: 'Dataviz & BI', symbol: '▥', iconBg: '#FDF3D7', iconColor: '#8A6200',
+    desc: 'Dashboards and charts that turn analysis into a story a decision-maker can read.',
+    skills: [
+      { name: 'Power BI (DAX, Power Query)', icon: TbChartBar,   bg: '#F2C811', color: '#333' },
+      { name: 'Plotly',                      icon: SiPlotly,     bg: '#3F4F75', color: '#fff' },
+      { name: 'Seaborn / Matplotlib',        icon: TbChartDots,  bg: '#4C72B0', color: '#fff' },
+      { name: 'Looker Studio',               icon: SiLooker,     bg: '#4285F4', color: '#fff' },
+      { name: 'Chart.js',                    icon: SiChartdotjs, bg: '#FF6384', color: '#fff' },
+    ],
+  },
+  {
+    label: 'Data Engineering', symbol: '⇄', iconBg: '#E6F1FB', iconColor: '#185FA5',
+    desc: 'Pipelines and models that make data reusable: ELT, warehousing and automation.',
+    skills: [
+      { name: 'Snowflake',        icon: SiSnowflake,     bg: '#29B5E8', color: '#fff' },
+      { name: 'dbt',              icon: SiDbt,           bg: '#FF694B', color: '#fff' },
+      { name: 'ELT / ETL',        icon: TbTransform,     bg: '#185FA5', color: '#fff' },
+      { name: 'Star schema',      icon: TbSchema,        bg: '#534AB7', color: '#fff' },
+      { name: 'Data APIs',        icon: TbApi,           bg: '#3B6D11', color: '#fff' },
+      { name: 'Make',             icon: SiMake,          bg: '#6D00CC', color: '#fff' },
+      { name: 'GitHub Actions',   icon: SiGithubactions, bg: '#2088FF', color: '#fff' },
+    ],
+  },
+  {
     label: 'Languages', symbol: '{ }', iconBg: '#E6F1FB', iconColor: '#185FA5',
-    desc: 'Core languages I write daily across frontend, backend and scripting.',
+    desc: 'Languages I write across data work, frontend and backend.',
     skills: [
       { name: 'JavaScript', icon: FaJs,         bg: '#F0DB4F', color: '#333'    },
       { name: 'Java',       icon: FaJava,       bg: '#007396', color: '#fff'    },
@@ -44,25 +84,28 @@ const CATEGORIES = [
     skills: [
       { name: 'Node.js',    icon: FaNodeJs,     bg: '#68A063', color: '#fff' },
       { name: 'Express',    icon: SiExpress,    bg: '#333',    color: '#fff' },
-      { name: 'Springboot', icon: SiSpringboot, bg: '#6DB33F', color: '#fff' },
+      { name: 'Spring Boot', icon: SiSpringboot, bg: '#6DB33F', color: '#fff' },
       { name: 'FastAPI',    icon: SiFastapi,    bg: '#049688', color: '#fff' },
     ],
   },
   {
     label: 'Databases', symbol: '⊞', iconBg: '#FAECE7', iconColor: '#993C1D',
-    desc: 'Databases I use for persistent storage and data modelling.',
+    desc: 'Databases and warehouses I use for storage, querying and data modelling.',
     skills: [
       { name: 'MongoDB', icon: SiMongodb, bg: '#47A248', color: '#fff' },
-      { name: 'MySQL',   icon: SiMysql,   bg: '#00758F', color: '#fff' },
+      { name: 'MySQL',     icon: SiMysql,     bg: '#00758F', color: '#fff' },
+      { name: 'Snowflake', icon: SiSnowflake, bg: '#29B5E8', color: '#fff' },
     ],
   },
   {
-    label: 'DevOps & Testing', symbol: '⟳', iconBg: '#FAEEDA', iconColor: '#854F0B',
+    label: 'DevOps & Tools', symbol: '⟳', iconBg: '#FAEEDA', iconColor: '#854F0B',
     desc: 'Tools I use to automate, test, monitor and deploy production systems.',
     skills: [
       { name: 'Docker',     icon: FaDocker,     bg: '#2496ED', color: '#fff' },
       { name: 'Jenkins',    icon: SiJenkins,    bg: '#D33833', color: '#fff' },
       { name: 'Git',        icon: FaGitAlt,     bg: '#F05032', color: '#fff' },
+      { name: 'GitLab',     icon: SiGitlab,     bg: '#FC6D26', color: '#fff' },
+      { name: 'Jira',       icon: SiJira,       bg: '#0052CC', color: '#fff' },
       { name: 'Jest',       icon: SiJest,       bg: '#C21325', color: '#fff' },
       { name: 'SonarQube',  icon: SiSonarqube,  bg: '#4E9BCD', color: '#fff' },
       { name: 'Prometheus', icon: SiPrometheus, bg: '#E6522C', color: '#fff' },
@@ -99,8 +142,8 @@ const Skills = () => {
 
         <SectionHeader
           eyebrow="Skills"
-          title="My tech stack"
-          subtitle="A focused set of technologies I use to build, ship and monitor production-grade applications."
+          title="Data + engineering stack"
+          subtitle="The tools I use to collect, clean, model and visualise data — and to build and ship the applications around it."
           inView={inView}
         />
 
@@ -110,12 +153,16 @@ const Skills = () => {
           style={{ '--delay': '0.21s' }}
         >
           {/* LEFT — category nav */}
-          <div className="sk-nav">
+          <div className="sk-nav" role="tablist" aria-label="Skill categories">
             {CATEGORIES.map((cat, i) => (
               <div
                 key={cat.label}
                 className={`sk-nav-item${i === active ? ' active' : ''}`}
                 onClick={() => handleSelect(i)}
+                onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSelect(i); } }}
+                role="tab"
+                tabIndex={0}
+                aria-selected={i === active}
               >
                 <div style={{
                   width: '30px', height: '30px', borderRadius: '8px', flexShrink: 0,

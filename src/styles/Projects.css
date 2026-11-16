@@ -39,6 +39,26 @@
   .proj-img-side:hover img {
     opacity: 1;
   }
+  /* Chart screenshots: show the whole figure instead of cropping it */
+  .proj-img-side--contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 20px;
+  }
+  .proj-img-side--contain img {
+    height: auto;
+    object-fit: contain;
+    opacity: 1;
+  }
+  .proj-diagram {
+    width: 100%;
+    height: 100%;
+    padding: 48px 24px;
+    display: block;
+  }
+  /* Alternate image left/right */
+  .proj-card--reverse .proj-img-side { order: 2; }
   .proj-badge-num {
     position: absolute;
     top: 16px;
@@ -91,6 +111,54 @@
     margin-bottom: 12px;
     line-height: 1.2;
   }
+  .proj-context {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-blue);
+    margin: -6px 0 12px;
+  }
+  .proj-status {
+    margin-left: 6px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: var(--color-green-bg);
+    color: var(--color-green-dark);
+    letter-spacing: .04em;
+  }
+
+  /* Filter tabs */
+  .proj-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: -16px 0 24px;
+  }
+  .proj-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 99px;
+    border: 0.5px solid var(--color-border-strong);
+    background: transparent;
+    color: var(--color-text-body);
+    cursor: pointer;
+    transition: all .15s ease;
+  }
+  .proj-filter:hover { background: var(--color-chip-bg); }
+  .proj-filter.active {
+    background: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+    color: var(--color-bg-primary);
+  }
+  .proj-filter-count {
+    font-size: 11px;
+    opacity: .65;
+  }
+  .proj-filter:focus-visible { outline: 2px solid var(--color-blue); outline-offset: 2px; }
+
   .proj-desc {
     font-size: 13px;
     line-height: 1.8;
@@ -193,6 +261,7 @@
       order: -1 !important;
       min-height: 220px !important;
     }
+    .proj-img-side--contain { padding: 48px 12px 44px; }
     .proj-content-side {
       order: 1 !important;
       direction: ltr !important;
